@@ -32,27 +32,7 @@ def extract_consultant(profile: str) -> Consultant:
     geo_location: str = profile_data["geoLocationName"]
     linkedin_profile_url = f"https://www.linkedin.com/in/{profile}"
     for experience in profile_data["experience"]:
-        location = experience.get("locationName", "")
-        time_period = experience["timePeriod"]
-        if time_period:
-            if "startDate" in time_period:
-                start_date = time_period["startDate"]
-                start_date_month = int(start_date.get("month", "1"))
-                start_date_year = int(start_date["year"]) if start_date["year"] else 1
-                start_date = datetime.datetime(start_date_year, start_date_month, 1)
-                end_date = None
-                if "endDate" in time_period:
-                    end_date = time_period["endDate"]
-                    end_date_month = int(end_date.get("month", "12"))
-                    if "year" in end_date:
-                        end_date_year = int(end_date["year"])
-                        end_date = datetime.datetime(end_date_year, end_date_month, 1)
-                company_name = experience["companyName"] or ""
-                company: Company = Company(name=company_name)
-                experience: Experience = Experience(
-                    location=location, start=start_date, end=end_date, company=company
-                )
-                experiences.append(experience)
+        add_experience(experiences, experience)
     for skill in profile_data["skills"]:
         if "name" in skill:
             skills.append(Skill(name=skill["name"]))
@@ -67,6 +47,30 @@ def extract_consultant(profile: str) -> Consultant:
         experiences=experiences,
         skills=skills
     )
+
+
+def add_experience(experiences, experience):
+    location = experience.get("locationName", "")
+    time_period = experience["timePeriod"]
+    if time_period:
+        if "startDate" in time_period:
+            start_date = time_period["startDate"]
+            start_date_month = int(start_date.get("month", "1"))
+            start_date_year = int(start_date["year"]) if start_date["year"] else 1
+            start_date = datetime.datetime(start_date_year, start_date_month, 1)
+            end_date = None
+            if "endDate" in time_period:
+                end_date = time_period["endDate"]
+                end_date_month = int(end_date.get("month", "12"))
+                if "year" in end_date:
+                    end_date_year = int(end_date["year"])
+                    end_date = datetime.datetime(end_date_year, end_date_month, 1)
+            company_name = experience["companyName"] or ""
+            company: Company = Company(name=company_name)
+            experience: Experience = Experience(
+                    location=location, start=start_date, end=end_date, company=company
+                )
+            experiences.append(experience)
 
 
 if __name__ == "__main__":
