@@ -1,0 +1,22 @@
+[project]
+name = "consultant-info-generator"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Gil Fernandes",email = "gil.fernandes@onepointltd.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13,<4"
+dependencies = [
+    "linkedin-api (>=2.3.1,<3.0.0)",
+    "pydantic (==2.10.6)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+
