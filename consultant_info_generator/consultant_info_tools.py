@@ -27,7 +27,7 @@ def extract_consultant(profile: str) -> Consultant:
     cv = profile_data["summary"]
     given_name = profile_data["firstName"]
     surname = profile_data["lastName"]
-    email = ""
+    email = f"{profile}@linkedin.com"
     industry_name: str = profile_data["industryName"]
     geo_location: str = profile_data["geoLocationName"]
     linkedin_profile_url = f"https://www.linkedin.com/in/{profile}"
