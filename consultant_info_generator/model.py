@@ -21,6 +21,7 @@ class Skill(BaseModel):
 
 class Experience(BaseModel):
     location: str = Field(..., description="The name of the location")
+    title: str = Field(..., description="The job title")
     start: Optional[datetime.datetime] = Field(
         None, description="The start of the employment"
     )

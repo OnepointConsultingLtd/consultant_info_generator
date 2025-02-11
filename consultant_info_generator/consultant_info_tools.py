@@ -66,9 +66,10 @@ def add_experience(experiences, experience):
                     end_date_year = int(end_date["year"])
                     end_date = datetime.datetime(end_date_year, end_date_month, 1)
             company_name = experience["companyName"] or ""
+            title = experience.get("title", "")
             company: Company = Company(name=company_name)
             experience: Experience = Experience(
-                    location=location, start=start_date, end=end_date, company=company
+                    location=location, title=title, start=start_date, end=end_date, company=company
                 )
             experiences.append(experience)
 
