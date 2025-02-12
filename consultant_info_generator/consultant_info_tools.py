@@ -24,7 +24,7 @@ def extract_consultant(profile: str) -> Consultant:
     companies: list[Company] = []
     skills: list[Skill] = []
     experiences: list[Experience] = []
-    cv = profile_data["summary"]
+    cv = profile_data.get("summary", "")
     given_name = profile_data["firstName"]
     surname = profile_data["lastName"]
     email = f"{profile}@linkedin.com"
@@ -75,7 +75,9 @@ def add_experience(experiences, experience):
 
 
 if __name__ == "__main__":
-    profile_name = "alexander-polev-cto"
+    # profile_name = "alexander-polev-cto"
+    # profile_name = "allanschweitz"
+    profile_name = "suresh-sharma-60336159"
     output_file = Path(f"{profile_name}-consultant.json")
     consultant = extract_consultant(profile_name)
     output_file.write_text(consultant.model_dump_json(), encoding="utf-8")
