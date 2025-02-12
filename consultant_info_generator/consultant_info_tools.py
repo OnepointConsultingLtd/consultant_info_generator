@@ -28,8 +28,8 @@ def extract_consultant(profile: str) -> Consultant:
     given_name = profile_data["firstName"]
     surname = profile_data["lastName"]
     email = f"{profile}@linkedin.com"
-    industry_name: str = profile_data["industryName"]
-    geo_location: str = profile_data["geoLocationName"]
+    industry_name: str = profile_data.get("industryName", "")
+    geo_location: str = profile_data.get("geoLocationName", "")
     linkedin_profile_url = f"https://www.linkedin.com/in/{profile}"
     for experience in profile_data["experience"]:
         add_experience(experiences, experience)
