@@ -1,0 +1,5 @@
+LINKEDIN_USER=<user email>
+LINKEDIN_PASSWORD=<pass>
+
+GEMINI_API_KEY=<some key>
+GEMINI_MODEL=gemini-2.0-flash-lite-preview-02-05
