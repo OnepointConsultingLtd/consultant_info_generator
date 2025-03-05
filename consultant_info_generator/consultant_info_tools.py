@@ -4,7 +4,13 @@ import datetime
 from linkedin_api import Linkedin
 
 from consultant_info_generator.config import cfg
-from consultant_info_generator.model import Consultant, Industry, Company, Experience, Skill
+from consultant_info_generator.model.model import (
+    Consultant,
+    Industry,
+    Company,
+    Experience,
+    Skill,
+)
 
 
 def extract_profile(profile: str) -> dict:
@@ -45,7 +51,7 @@ def extract_consultant(profile: str) -> Consultant:
         geo_location=geo_location,
         linkedin_profile_url=linkedin_profile_url,
         experiences=experiences,
-        skills=skills
+        skills=skills,
     )
 
 
@@ -69,8 +75,12 @@ def add_experience(experiences, experience):
             title = experience.get("title", "")
             company: Company = Company(name=company_name)
             experience: Experience = Experience(
-                    location=location, title=title, start=start_date, end=end_date, company=company
-                )
+                location=location,
+                title=title,
+                start=start_date,
+                end=end_date,
+                company=company,
+            )
             experiences.append(experience)
 
 

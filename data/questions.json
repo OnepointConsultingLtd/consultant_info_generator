@@ -1,0 +1,125 @@
+{
+    "category_questions": [
+        {
+            "name": "industry",
+            "description": "The industry of the consultant",
+            "list_of_values": [
+                "Information Technology & Services"
+            ],
+            "question": "What industry does the consultant specialize in?"
+        },
+        {
+            "name": "job title",
+            "description": "The job title of the consultant",
+            "list_of_values": [
+                "Founder & CEO",
+                "Managing Director",
+                "Associate",
+                "Interim Programme Director for Customer Experience",
+                "Architecture Consultant",
+                "Software Engineer",
+                "System Administrator",
+                "Director of Operations - India",
+                "Operations Officer",
+                "Consultant",
+                "Sr Software Engineer",
+                "Front-End Web Developer"
+            ],
+            "question": "What is the current job title of the consultant?"
+        },
+        {
+            "name": "company size",
+            "description": "The size of the company the consultant works at",
+            "list_of_values": [
+                "Startup",
+                "Small",
+                "Medium",
+                "Large"
+            ],
+            "question": "What size is the company where the consultant is currently employed?"
+        },
+        {
+            "name": "years of experience",
+            "description": "The years of experience of the consultant",
+            "list_of_values": [
+                "4 years",
+                "15 years",
+                "35 years"
+            ],
+            "question": "How many years of experience does the consultant have?"
+        },
+        {
+            "name": "location",
+            "description": "The location of the consultant",
+            "list_of_values": [
+                "Enfield, England",
+                "Athens, Attiki",
+                "Pune, Maharashtra",
+                "London",
+                "Mumbai Area, India",
+                "United Kingdom"
+            ],
+            "question": "What is the location of the consultant?"
+        },
+        {
+            "name": "education",
+            "description": "The education of the consultant",
+            "list_of_values": [
+                "Student",
+                "Bachelor's Degree",
+                "Master's Degree"
+            ],
+            "question": "What is the highest level of education achieved by the consultant?"
+        },
+        {
+            "name": "skills",
+            "description": "The skills of the consultant",
+            "list_of_values": [
+                "Enterprise Architecture",
+                "IT Strategy",
+                "Solution Architecture",
+                "Program Management",
+                "Software Infrastructure",
+                "Front-End Development",
+                "Team Leadership",
+                "Apollo GraphQL",
+                "Software Project Management",
+                "J2EE",
+                "SQL Server",
+                "C++"
+            ],
+            "question": "What are the key skills possessed by the consultant?"
+        },
+        {
+            "name": "interests",
+            "description": "The areas of interest or focus of the consultant",
+            "list_of_values": [
+                "Artificial Intelligence",
+                "Deep Learning",
+                "Big Data solutions and analytics",
+                "Open Source solutions",
+                "Delivering Value to Clients",
+                "Design to cost",
+                "AI and Cyber Security",
+                "Continuous learning"
+            ],
+            "question": "What areas of interest does the consultant focus on?"
+        },
+        {
+            "name": "mentoring",
+            "description": "The mentoring experience of the consultant",
+            "list_of_values": [
+                "Mentoring beginners and junior developers"
+            ],
+            "question": "Does the consultant have any mentoring experience?"
+        },
+        {
+            "name": "volunteering",
+            "description": "The volunteering experience of the consultant",
+            "list_of_values": [
+                "English Translator at STOP THE TRAFFIK Global"
+            ],
+            "question": "Has the consultant participated in any volunteering activities?"
+        }
+    ]
+}

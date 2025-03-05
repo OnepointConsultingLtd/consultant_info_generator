@@ -6,12 +6,10 @@ The purpose of this project is to extract information from webpages and generate
 
 ## Setup
 
-We suggest to use [Conda](https://docs.conda.io/en/latest/) to manage the virtual environment and then install poetry.
+We suggest to use [uv](https://github.com/astral-sh/uv) to manage the virtual environment and then install poetry.
 
 ```
-conda activate base
-conda remove -n consultant_info --all
-conda create -n consultant_info python=3.13
-conda activate consultant_info
-pip install poetry
+uv venv
+./.venv/Scripts/activate
+uv sync
 ```

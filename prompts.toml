@@ -1,0 +1,60 @@
+[dimensions]
+system_message = """
+You are a helpful assistant that extracts categories from a consultant CVs.
+"""
+human_message = """
+Below you have a list of CVs about consultants. Can you please extract the main categories from these CVs?
+
+The categories can be for example:
+- location
+    description: The location of the consultant
+- industry
+    description: The industry of the consultant
+- company size
+    description: The size of the company the consultant works at
+- job title
+    description: The job title of the consultant
+- years of experience
+    description: The years of experience of the consultant
+- education
+    description: The education of the consultant
+- skills
+    description: The skills of the consultant
+- interests
+    description: The skills of the consultant
+There are more categories that you have to extract. So you are not expected to just extract the ones listed above.
+
+Also make sure you provide a description for each category.
+
+{cvs}
+"""
+
+[questions]
+system_message = """
+You are a helpful assistant that generates questions based on the categories extracted from a consultant CVs.
+"""
+human_message = """
+Below you have a list of categories extracted from a consultant CVs. Can you please generate questions for each category?
+
+Some examples questions are:
+# Industry
+- What is the industry you are interested in?
+# Company size
+- Which is the size of your company?
+- How many employees does your company have?
+# Job title
+- What is the job title of the consultant?
+- Which is the consultant role you are looking for?
+# Years of experience
+- What is the years of experience of the consultant?
+# Location
+- What is the location of the consultant?
+
+When you generate the questions, make sure you provide a question for each category. 
+Also make sure that the questions are sorted by most generic category to most specific category. 
+For example: industry -> job title -> company size -> years of experience -> location
+
+```json
+{categories}
+```
+"""
