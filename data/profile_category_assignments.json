@@ -1,0 +1,454 @@
+{
+    "profile_category_assignments": [
+        {
+            "category_name": "industry",
+            "category_element": "Computer Software",
+            "reason": "The consultant has over 25 years of professional experience as a Software Engineer, which directly aligns with the Computer Software category.",
+            "profile": "gil-palma-fernandes"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Software Engineer",
+            "reason": "The consultant has extensive experience as a Software Engineer and has also identified as a Data Scientist in his CV, showcasing relevant skills and work history.",
+            "profile": "gil-palma-fernandes"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Large",
+            "reason": "The consultant has over 25 years of professional experience and has worked on significant projects in the aviation industry, suggesting involvement with large companies.",
+            "profile": "gil-palma-fernandes"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "25+ years",
+            "reason": "The consultant has over 25 years of professional experience as mentioned in their CV.",
+            "profile": "gil-palma-fernandes"
+        },
+        {
+            "category_name": "location",
+            "category_element": "London Area, United Kingdom",
+            "reason": "The consultant's geo_location is explicitly stated as 'London Area, United Kingdom'.",
+            "profile": "gil-palma-fernandes"
+        },
+        {
+            "category_name": "industry",
+            "category_element": "Information Technology & Services",
+            "reason": "The consultant's industry name is explicitly listed as 'Information Technology & Services', and their experience includes roles relevant to this field.",
+            "profile": "allanschweitz"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Enterprise Solutions Architect",
+            "reason": "The consultant has explicitly stated 'Enterprise Solutions Architect' in their description, indicating this is a key role they fulfill.",
+            "profile": "allanschweitz"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Large",
+            "reason": "The consultant has held several high-level positions such as Director of Technology Services and Head of Architecture at Onepoint Consulting, indicating experience in a large organization. Additionally, expertise in Enterprise Architecture and Large Systems Integration supports the categorization as related to large-scale operations.",
+            "profile": "allanschweitz"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "16+ years",
+            "reason": "The consultant's experience spans from 2007 to the present, indicating over 16 years in the industry, particularly in roles related to technology and architecture.",
+            "profile": "allanschweitz"
+        },
+        {
+            "category_name": "location",
+            "category_element": "London, England",
+            "reason": "The consultant currently resides in London, England and has held multiple positions in London.",
+            "profile": "allanschweitz"
+        },
+        {
+            "category_name": "industry",
+            "category_element": "Information Technology & Services",
+            "reason": "The consultant's industry is listed as 'Information Technology & Services', indicating a direct alignment with this category.",
+            "profile": "suresh-sharma-60336159"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Chief Customer Officer",
+            "reason": "The consultant currently holds the position of Chief Customer Officer at Onepoint Consulting since July 2023.",
+            "profile": "suresh-sharma-60336159"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Large",
+            "reason": "Suresh Sharma has held senior positions such as Chief Customer Officer and Head of Business Engagement at large companies like Onepoint Consulting and Meggitt, indicating a strong experience in large organizational settings.",
+            "profile": "suresh-sharma-60336159"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "5-10 years",
+            "reason": "Suresh has approximately 5 years of relevant experience in the Information Technology & Services industry based on his roles from 2018 to 2023.",
+            "profile": "suresh-sharma-60336159"
+        },
+        {
+            "category_name": "location",
+            "category_element": "Leicester, England",
+            "reason": "The consultant's location is listed as Leicester, England.",
+            "profile": "suresh-sharma-60336159"
+        },
+        {
+            "category_name": "industry",
+            "category_element": "Information Technology & Services",
+            "reason": "Sangeetha has significant experience in the Information Technology & Services industry, as indicated by her current role and past experiences.",
+            "profile": "sangeethaviswanathan"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Programme Manager",
+            "reason": "Sangeetha is a CSM, DSDM, PRINCE 2 Certified Programme Manager with over 16 years of experience managing project teams, which aligns with the Programme Manager category.",
+            "profile": "sangeethaviswanathan"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Medium",
+            "reason": "Sangeetha has significant experience leading project delivery and operations as a Director and Head of Project Delivery, which typically aligns with medium-sized companies that have structured project management roles and a focus on operational efficiency.",
+            "profile": "sangeethaviswanathan"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "16+ years",
+            "reason": "The consultant has an overall work experience of 16+ years as stated in her CV.",
+            "profile": "sangeethaviswanathan"
+        },
+        {
+            "category_name": "location",
+            "category_element": "London, England, United Kingdom",
+            "reason": "The consultant has experience in London as both Director and Head of Project Delivery and Operations.",
+            "profile": "sangeethaviswanathan"
+        },
+        {
+            "category_name": "industry",
+            "category_element": "Information Technology & Services",
+            "reason": "The consultant's industry experience is primarily in Information Technology & Services, as indicated in his CV, which highlights roles such as Software Architect and IT Consultant.",
+            "profile": "miguelvale"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "IT Consultant",
+            "reason": "Miguel has extensive experience in IT consulting roles, including his positions as Senior IT Consultant and IT Consultant. His background and skills in information technology make this category highly applicable.",
+            "profile": "miguelvale"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Medium",
+            "reason": "Miguel has extensive experience in various roles within multinational companies, indicating he has worked in a medium-sized organizational context, particularly with his background at Portugal Telecom and One Point Consulting Limited.",
+            "profile": "miguelvale"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "15+ years",
+            "reason": "Miguel has over 15 years of experience as stated in his CV.",
+            "profile": "miguelvale"
+        },
+        {
+            "category_name": "location",
+            "category_element": "Lisbon Area, Portugal",
+            "reason": "The consultant, Miguel Vale, has worked in the Lisbon Area, Portugal for several years as an IT Consultant and in other IT roles.",
+            "profile": "miguelvale"
+        },
+        {
+            "category_name": "industry",
+            "category_element": "Information Technology & Services",
+            "reason": "The consultant has extensive experience in the IT industry, as indicated in their CV, which aligns perfectly with the 'Information Technology & Services' category.",
+            "profile": "ablessy"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Senior UI/UX Designer",
+            "reason": "The consultant has extensive experience as a UI/UX Designer, with their most recent position being a Senior UI/UX Designer at Onepoint Consulting.",
+            "profile": "ablessy"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Medium",
+            "reason": "The consultant has experience with multiple companies in the IT industry and has worked in roles that suggest a focus on medium-sized organizations. The presence of roles like 'Senior UI/UX Designer' and the range of companies indicates exposure to a collaborative environment typical of medium enterprises.",
+            "profile": "ablessy"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "4 years",
+            "reason": "The consultant has a total of approximately 4 years of experience in UI/UX design based on the provided work history.",
+            "profile": "ablessy"
+        },
+        {
+            "category_name": "location",
+            "category_element": "Madurai, Tamil Nadu",
+            "reason": "The consultant's CV indicates that they are located in Madurai, Tamil Nadu, which matches one of the category elements.",
+            "profile": "ablessy"
+        },
+        {
+            "category_name": "industry",
+            "category_element": "Information Technology & Services",
+            "reason": "The consultant has extensive experience in enterprise architecture and cloud technologies, which aligns with the Information Technology & Services category.",
+            "profile": "alexander-polev-cto"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Chief Technology Officer",
+            "reason": "The consultant is currently serving as the Chief Technology Officer at Onepoint Consulting, which aligns directly with this category.",
+            "profile": "alexander-polev-cto"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Large",
+            "reason": "The consultant has extensive experience with large organizations such as TUI, AOL, and Meggitt, which indicates a background suited for large-scale enterprise environments.",
+            "profile": "alexander-polev-cto"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "20 years",
+            "reason": "The consultant has over 20 years of experience as stated in the CV.",
+            "profile": "alexander-polev-cto"
+        },
+        {
+            "category_name": "location",
+            "category_element": "London, England",
+            "reason": "The consultant's geo location is specified as 'London, England', which matches the category element.",
+            "profile": "alexander-polev-cto"
+        },
+        {
+            "category_name": "industry",
+            "category_element": "Information Technology & Services",
+            "reason": "The consultant's experience and current position as a Software Engineer clearly align with the Information Technology & Services industry, as stated in the industry_name field.",
+            "profile": "jakeraeburn"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Software Engineer",
+            "reason": "The consultant has experience as a Software Engineer and a solid foundation in full-stack development, which aligns with the category of Software Engineer.",
+            "profile": "jakeraeburn"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Medium",
+            "reason": "The consultant has experience at Onepoint Consulting, which is a medium-sized consulting firm that provides a range of IT services, aligning with the consultant's skills and experience in software engineering and development.",
+            "profile": "jakeraeburn"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "4 years",
+            "reason": "The consultant has relevant experience from their roles as a Junior Software Engineer and Customer Assistant, totaling approximately 4 years of work experience in the Information Technology field.",
+            "profile": "jakeraeburn"
+        },
+        {
+            "category_name": "location",
+            "category_element": "London Area, United Kingdom",
+            "reason": "The consultant has listed 'London Area, United Kingdom' as their geo location and has work experience in this area.",
+            "profile": "jakeraeburn"
+        },
+        {
+            "category_name": "industry",
+            "category_element": "Information Technology & Services",
+            "reason": "The consultant's industry name is explicitly stated as 'Information Technology & Services', making this category directly applicable.",
+            "profile": "rita-rajabally-96135629"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Senior Finance Administrator",
+            "reason": "The consultant has experience listed as a Senior Finance Administrator at One Point Consulting Limited, which directly matches the category element.",
+            "profile": "rita-rajabally-96135629"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Small",
+            "reason": "The consultant has experience with One Point Consulting Limited, which suggests a smaller consulting firm typically involved in specialized services.",
+            "profile": "rita-rajabally-96135629"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "16+ years",
+            "reason": "Rita has been working since February 2006 and has at least 17 years of experience in the industry.",
+            "profile": "rita-rajabally-96135629"
+        },
+        {
+            "category_name": "location",
+            "category_element": "London, England",
+            "reason": "The consultant has experience listed in London, United Kingdom, which corresponds to the category element 'London, England'.",
+            "profile": "rita-rajabally-96135629"
+        },
+        {
+            "category_name": "industry",
+            "category_element": "Information Technology & Services",
+            "reason": "The consultant's industry name is 'Information Technology & Services', indicating a direct relevance to this category.",
+            "profile": "elza-braeken-330ba31a6"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Information Governance and Risk Manager",
+            "reason": "The consultant has directly held the title of Information Governance and Risk Manager at Onepoint Consulting since March 2018, which aligns perfectly with the category element.",
+            "profile": "elza-braeken-330ba31a6"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Medium",
+            "reason": "The consultant has experience in various roles, including a managerial position at UCL and information governance at Onepoint Consulting, which suggests a level of experience typically associated with medium-sized companies.",
+            "profile": "elza-braeken-330ba31a6"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "20 years",
+            "reason": "The consultant has a total of 22 years of experience, calculated from the years worked in various roles: 1995 to 2000 (5 years) + 2000 to 2017 (17 years) + 2018 to present (5+ years). Overall, this exceeds 20 years.",
+            "profile": "elza-braeken-330ba31a6"
+        },
+        {
+            "category_name": "location",
+            "category_element": "London, England",
+            "reason": "The consultant has a geo location listed as 'London, England' and also worked in London, England, United Kingdom.",
+            "profile": "elza-braeken-330ba31a6"
+        },
+        {
+            "category_name": "industry",
+            "category_element": "Information Technology & Services",
+            "reason": "The consultant has over 35 years of experience in delivering Technology Strategies and Architectures across various industries, indicating a strong background in the Information Technology & Services sector.",
+            "profile": "shashinbshah"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Founder & CEO",
+            "reason": "The consultant has experience as a Founder & CEO at Onepoint since 2005.",
+            "profile": "shashinbshah"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Large",
+            "reason": "The consultant has over 35 years of experience and has worked with notable large organizations such as Flight Centre, Meggitt, and Tesco Telecom, indicating a capacity to operate within large scale environments.",
+            "profile": "shashinbshah"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "35 years",
+            "reason": "The consultant has over 35 years of experience in delivering technology strategies and solutions, as stated in their CV.",
+            "profile": "shashinbshah"
+        },
+        {
+            "category_name": "location",
+            "category_element": "Enfield, England",
+            "reason": "The consultant's geo_location is specifically listed as Enfield, England, indicating a direct relevance to this category element.",
+            "profile": "shashinbshah"
+        },
+        {
+            "category_name": "industry",
+            "category_element": "Information Technology & Services",
+            "reason": "The consultant is a software engineer with experience in front-end and back-end technologies, which directly aligns with the Information Technology & Services industry.",
+            "profile": "murtaza-hassani"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Founder & CEO",
+            "reason": "The consultant is currently the Founder and CEO of Afghan Geeks since January 2023.",
+            "profile": "murtaza-hassani"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Small",
+            "reason": "Murtaza is the Founder and CEO of Afghan Geeks, which typically indicates a small company size, as startups or individual-led companies are usually classified as small.",
+            "profile": "murtaza-hassani"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "4 years",
+            "reason": "The consultant, Murtaza Hassani, has a total of 4 years of professional experience as stated in his CV.",
+            "profile": "murtaza-hassani"
+        },
+        {
+            "category_name": "location",
+            "category_element": "Athens, Attiki",
+            "reason": "The consultant has listed Athens, Attiki as his primary location in his CV and has experience working there.",
+            "profile": "murtaza-hassani"
+        },
+        {
+            "category_name": "industry",
+            "category_element": "Information Technology & Services",
+            "reason": "The consultant's industry is explicitly stated as 'Information Technology & Services', indicating direct relevance to this category.",
+            "profile": "maithilishetty"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Director of Operations - India",
+            "reason": "The consultant holds the position of 'Director of Operations - India' at Onepoint Consulting, which directly matches the category element.",
+            "profile": "maithilishetty"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Medium",
+            "reason": "The consultant has experience working in positions such as Director of Operations and Operations Officer at Onepoint Consulting, which suggests involvement in a medium-sized company context, given the typical scope of operations in the IT and services industry in Pune.",
+            "profile": "maithilishetty"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "25+ years",
+            "reason": "The consultant has a total experience from 1989 to 2025, which sums up to 36 years.",
+            "profile": "maithilishetty"
+        },
+        {
+            "category_name": "location",
+            "category_element": "Pune, Maharashtra",
+            "reason": "The consultant's geo location is explicitly listed as 'Pune, Maharashtra', and all their work experiences also indicate Pune as the location.",
+            "profile": "maithilishetty"
+        },
+        {
+            "category_name": "industry",
+            "category_element": "Software Engineer",
+            "reason": "Louisa has a Bachelor's degree in Computer Science and works as a Software Engineer at Lloyds Banking Group, which falls under the Computer Software category.",
+            "profile": "louisa-ekanem"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "IT Consultant/ C# Developer",
+            "reason": "Louisa has over 4 years of experience as an IT Consultant and a C# Developer, which aligns perfectly with the category of IT Consultant/ C# Developer.",
+            "profile": "louisa-ekanem"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Large",
+            "reason": "Louisa has worked for large companies such as Lloyds Banking Group and Bank of America Merrill Lynch, which are both considered large organizations in the finance and technology sectors.",
+            "profile": "louisa-ekanem"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "4 years",
+            "reason": "The consultant has over 4 years of experience as an IT Consultant and C# Developer.",
+            "profile": "louisa-ekanem"
+        },
+        {
+            "category_name": "location",
+            "category_element": "London, England",
+            "reason": "The consultant has worked as a Software Engineer and IT Consultant in London, England, United Kingdom.",
+            "profile": "louisa-ekanem"
+        },
+        {
+            "category_name": "industry",
+            "category_element": "Banking",
+            "reason": "The consultant has extensive experience working with banking applications, specifically highlighted by their role as Product Lead for the design and implementation of monitoring solutions at Lloyds Banking Group, which is a banking institution.",
+            "profile": "darren-miller-1035743"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Ecommerce Operations Team Lead",
+            "reason": "Darren has experience as an Ecommerce Operations Team Lead at Harrods, where he established and introduced ITIL and DevOps frameworks to the operations team.",
+            "profile": "darren-miller-1035743"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Large",
+            "reason": "Darren Miller has extensive experience working with large organizations such as Lloyds Banking Group, Harrods, and John Lewis, which are all considered large enterprises. His roles involved significant responsibilities, including product lead and SME for critical payment systems, indicating a high level of complexity and scale.",
+            "profile": "darren-miller-1035743"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "20 years",
+            "reason": "Darren has over 20 years of in-depth experience in designing and developing monitoring solutions, as stated in his CV.",
+            "profile": "darren-miller-1035743"
+        },
+        {
+            "category_name": "location",
+            "category_element": "Greater London, England",
+            "reason": "The consultant is based in Greater London, England, which matches the specified category element.",
+            "profile": "darren-miller-1035743"
+        }
+    ]
+}

@@ -13,7 +13,9 @@ class Questions(BaseModel):
 
 class CategoryQuestion(Category):
     question: str = Field(description="The question")
-    
+
 
 class CategoryQuestions(BaseModel):
-    category_questions: list[CategoryQuestion] = Field(description="The category questions")
+    category_questions: list[CategoryQuestion] = Field(
+        description="The category questions"
+    )

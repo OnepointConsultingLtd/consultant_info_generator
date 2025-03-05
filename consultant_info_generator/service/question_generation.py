@@ -2,7 +2,11 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnableSequence
 from consultant_info_generator.config import cfg
 from consultant_info_generator.service.prompt_factory import prompt_factory
-from consultant_info_generator.model.questions import Questions, CategoryQuestion, CategoryQuestions
+from consultant_info_generator.model.questions import (
+    Questions,
+    CategoryQuestion,
+    CategoryQuestions,
+)
 from consultant_info_generator.model.category import Categories
 
 

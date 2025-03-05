@@ -4,122 +4,94 @@
             "name": "industry",
             "description": "The industry of the consultant",
             "list_of_values": [
-                "Information Technology & Services"
+                "Computer Software",
+                "Information Technology & Services",
+                "Banking"
             ],
-            "question": "What industry does the consultant specialize in?"
+            "question": "What industry are you looking for expertise in?"
         },
         {
             "name": "job title",
             "description": "The job title of the consultant",
             "list_of_values": [
                 "Founder & CEO",
-                "Managing Director",
+                "Operations Officer",
+                "Director of Technology Services",
+                "Information Governance and Risk Manager",
+                "Data Scientist",
+                "Ecommerce Operations Team Lead",
                 "Associate",
+                "Programme Manager",
                 "Interim Programme Director for Customer Experience",
+                "Enterprise Solutions Architect",
+                "Consultant",
+                "IT Consultant/ C# Developer",
+                "Director of Operations - India",
+                "Chief Customer Officer",
+                "Senior UI/UX Designer",
+                "IT Indirect Retail Team Leader",
+                "Group Leader, Online Application Support",
                 "Architecture Consultant",
                 "Software Engineer",
-                "System Administrator",
-                "Director of Operations - India",
-                "Operations Officer",
-                "Consultant",
+                "Chief Technology Officer",
+                "Senior Technical Lead",
+                "Managing Director",
                 "Sr Software Engineer",
-                "Front-End Web Developer"
+                "Senior Finance Administrator",
+                "Information Technology Consultant",
+                "Project Manager",
+                "Head of Business Engagement"
             ],
-            "question": "What is the current job title of the consultant?"
+            "question": "What specific job title or role do you need assistance with?"
         },
         {
             "name": "company size",
             "description": "The size of the company the consultant works at",
             "list_of_values": [
-                "Startup",
                 "Small",
                 "Medium",
                 "Large"
             ],
-            "question": "What size is the company where the consultant is currently employed?"
+            "question": "What size of company are you interested in working with?"
         },
         {
             "name": "years of experience",
             "description": "The years of experience of the consultant",
             "list_of_values": [
-                "4 years",
-                "15 years",
-                "35 years"
+                "25+ years",
+                "16+ years",
+                "5-10 years",
+                "15+ years",
+                "35 years",
+                "20 years",
+                "10-15 years",
+                "4 years"
             ],
-            "question": "How many years of experience does the consultant have?"
+            "question": "What range of years of experience are you seeking in a consultant?"
         },
         {
             "name": "location",
             "description": "The location of the consultant",
             "list_of_values": [
+                "Orpington, England, United Kingdom",
                 "Enfield, England",
+                "Manchester Area, United Kingdom",
                 "Athens, Attiki",
-                "Pune, Maharashtra",
-                "London",
-                "Mumbai Area, India",
-                "United Kingdom"
+                "Japan",
+                "Madurai, Tamil Nadu",
+                "Salford, United Kingdom",
+                "Hyderabad, Telangana, India",
+                "Lisbon Area, Portugal",
+                "Greater London, England",
+                "Antwerp, Belgium",
+                "London Area, United Kingdom",
+                "Coventry, England, United Kingdom",
+                "London, England",
+                "Leicester, England",
+                "Durban Area, South Africa",
+                "Pune, Maharashtra"
             ],
-            "question": "What is the location of the consultant?"
-        },
-        {
-            "name": "education",
-            "description": "The education of the consultant",
-            "list_of_values": [
-                "Student",
-                "Bachelor's Degree",
-                "Master's Degree"
-            ],
-            "question": "What is the highest level of education achieved by the consultant?"
-        },
-        {
-            "name": "skills",
-            "description": "The skills of the consultant",
-            "list_of_values": [
-                "Enterprise Architecture",
-                "IT Strategy",
-                "Solution Architecture",
-                "Program Management",
-                "Software Infrastructure",
-                "Front-End Development",
-                "Team Leadership",
-                "Apollo GraphQL",
-                "Software Project Management",
-                "J2EE",
-                "SQL Server",
-                "C++"
-            ],
-            "question": "What are the key skills possessed by the consultant?"
-        },
-        {
-            "name": "interests",
-            "description": "The areas of interest or focus of the consultant",
-            "list_of_values": [
-                "Artificial Intelligence",
-                "Deep Learning",
-                "Big Data solutions and analytics",
-                "Open Source solutions",
-                "Delivering Value to Clients",
-                "Design to cost",
-                "AI and Cyber Security",
-                "Continuous learning"
-            ],
-            "question": "What areas of interest does the consultant focus on?"
-        },
-        {
-            "name": "mentoring",
-            "description": "The mentoring experience of the consultant",
-            "list_of_values": [
-                "Mentoring beginners and junior developers"
-            ],
-            "question": "Does the consultant have any mentoring experience?"
-        },
-        {
-            "name": "volunteering",
-            "description": "The volunteering experience of the consultant",
-            "list_of_values": [
-                "English Translator at STOP THE TRAFFIK Global"
-            ],
-            "question": "Has the consultant participated in any volunteering activities?"
+            "question": "What location do you prefer for your consultant?"
         }
     ]
 }

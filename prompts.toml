@@ -43,18 +43,41 @@ Some examples questions are:
 - Which is the size of your company?
 - How many employees does your company have?
 # Job title
-- What is the job title of the consultant?
+- What is the job title you are looking for?
 - Which is the consultant role you are looking for?
 # Years of experience
-- What is the years of experience of the consultant?
+- What is the years of experience you are looking for?
 # Location
-- What is the location of the consultant?
+- Which is the location you are looking for?
 
 When you generate the questions, make sure you provide a question for each category. 
 Also make sure that the questions are sorted by most generic category to most specific category. 
 For example: industry -> job title -> company size -> years of experience -> location
 
+Also makre sure that the questions are focused on the needs of the customer of the consultant.
+The scenario is that of a chatbot that is asking a potential customer about their needs.
+
 ```json
 {categories}
 ```
+"""
+
+[dimensions_assigner]
+system_message = """
+You are a helpful assistant that assigns single categories (dimensions to a list of consultants.
+"""
+human_message = """
+Below you have a list of dimensions extracted from a consultant CVs. Can you please check if they apply to the consultant?
+
+The category elements are:
+
+{categories}
+
+The consultant description is:
+```
+{consultant}
+```
+
+You should output the category elements that apply to the consultant.
+
 """
