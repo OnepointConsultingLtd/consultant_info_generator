@@ -5,6 +5,10 @@ from consultant_info_generator.model.model import (
     Skill,
 )
 from consultant_info_generator.model.category import Category
+from consultant_info_generator.model.questions import CategoryQuestion
+from consultant_info_generator.model.category_assignments import (
+    ProfileCategoryAssignment,
+)
 from psycopg import AsyncCursor
 
 from consultant_info_generator.service.query_support import create_cursor, select_from
@@ -114,6 +118,19 @@ DELETE FROM TB_CONSULTANT WHERE EMAIL=%(email)s
     return await create_cursor(process, True)
 
 
+async def delete_consultant_by_profile_id(profile_id: str) -> int:
+    async def process(cur: AsyncCursor):
+        sql = """
+DELETE FROM TB_CONSULTANT WHERE LINKEDIN_PROFILE_URL=%(profile_id)s
+"""
+        await cur.execute(
+            sql, {"profile_id": f"https://www.linkedin.com/in/{profile_id}"}
+        )
+        return cur.rowcount
+
+    return await create_cursor(process, True)
+
+
 async def read_consultants(offset: int = None, limit: int = None) -> list[Consultant]:
     splitter = "@@"
     offset_expression = f"OFFSET {offset}" if offset else ""
@@ -186,7 +203,9 @@ async def save_category(category: Category) -> int | None:
 INSERT INTO TB_CATEGORY(NAME, DESCRIPTION) VALUES(%(name)s, %(description)s)
 ON CONFLICT (NAME) DO UPDATE SET DESCRIPTION=%(description)s RETURNING ID;
 """
-        await cur.execute(sql, {"name": category.name, "description": category.description})
+        await cur.execute(
+            sql, {"name": category.name, "description": category.description}
+        )
         rows = await cur.fetchone()
         if rows is None or len(rows) == 0:
             return None
@@ -199,6 +218,7 @@ ON CONFLICT (CATEGORY_ID, ITEM) DO NOTHING
         for value in category.list_of_values:
             await cur.execute(sql, {"category_id": category_id, "item": value})
         return category_id
+
     return await create_cursor(process, True)
 
 
@@ -208,6 +228,7 @@ async def delete_category(category: Category) -> int:
 DELETE FROM TB_CATEGORY WHERE NAME=%(name)s"""
         await cur.execute(sql, {"name": category.name})
         return cur.rowcount
+
     return await create_cursor(process, True)
 
 
@@ -224,10 +245,102 @@ ORDER BY C.NAME
     category_item = 2
     for r in rows:
         if current_category is None or current_category.name != r[category_name]:
-            current_category = Category(name=r[category_name], description=r[category_description], list_of_values=[])
+            current_category = Category(
+                name=r[category_name],
+                description=r[category_description],
+                list_of_values=[],
+            )
             categories.append(current_category)
             current_category.list_of_values.append(r[category_item])
         else:
             current_category.list_of_values.append(r[category_item])
     return categories
 
+
+async def save_category_question(question: CategoryQuestion) -> int | None:
+    async def process(cur: AsyncCursor):
+        await save_category(question)
+        sql = """
+INSERT INTO TB_CATEGORY_QUESTION(CATEGORY_ID, QUESTION) VALUES(%(category_id)s, %(question)s)
+ON CONFLICT ((SELECT ID FROM TB_CATEGORY WHERE NAME = %(category_name)s), %(question)s) DO NOTHING RETURNING ID;
+"""
+        await cur.execute(
+            sql, {"category_name": question.name, "question": question.question}
+        )
+        rows = await cur.fetchone()
+        return None if rows is None or len(rows) == 0 else rows[0]
+
+    return await create_cursor(process, True)
+
+
+async def delete_category_question(question: CategoryQuestion) -> int:
+    async def process(cur: AsyncCursor):
+        sql = """
+DELETE FROM TB_CATEGORY_QUESTION WHERE CATEGORY_ID = (SELECT ID FROM TB_CATEGORY WHERE NAME = %(category_name)s) AND QUESTION = %(question)s
+"""
+        await cur.execute(
+            sql, {"category_name": question.name, "question": question.question}
+        )
+        deleted_questions = cur.rowcount
+        deleted_category = await delete_category(question)
+        return deleted_questions + deleted_category
+
+    return await create_cursor(process, True)
+
+
+
+async def save_profile_category_assignment(
+    assignment: ProfileCategoryAssignment,
+) -> int | None:
+    async def process(cur: AsyncCursor):
+        sql = """
+INSERT INTO TB_CONSULTANT_CATEGORY_ITEM_ASSIGNMENT(CONSULTANT_ID, CATEGORY_ITEM_ID, REASON) 
+VALUES(
+    (select id from tb_consultant where linkedin_profile_url = %(profile_url)s), 
+    (SELECT ID FROM TB_CATEGORY_ITEM WHERE CATEGORY_ID = (SELECT ID FROM TB_CATEGORY WHERE NAME = %(category_name)s) AND ITEM = %(category_element)s),
+    %(reason)s
+)
+ON CONFLICT (CONSULTANT_ID, CATEGORY_ITEM_ID) DO NOTHING RETURNING ID;
+"""
+        await cur.execute(
+            sql,
+            {
+                "profile_url": (
+                    f"https://www.linkedin.com/in/{assignment.profile}"
+                    if "linkedin" not in assignment.profile
+                    else assignment.profile
+                ),
+                "category_name": assignment.category_name,
+                "category_element": assignment.category_element,
+                "reason": assignment.reason,
+            },
+        )
+        rows = await cur.fetchone()
+        return None if rows is None or len(rows) == 0 else rows[0]
+
+    return await create_cursor(process, True)
+
+
+async def delete_profile_category_assignment(
+    assignment: ProfileCategoryAssignment,
+) -> int | None:
+    async def process(cur: AsyncCursor):
+        sql = """
+DELETE FROM TB_CONSULTANT_CATEGORY_ITEM_ASSIGNMENT 
+WHERE CONSULTANT_ID = (SELECT ID FROM TB_CONSULTANT WHERE LINKEDIN_PROFILE_URL = %(profile_url)s) 
+AND CATEGORY_ITEM_ID = (SELECT ID FROM TB_CATEGORY_ITEM WHERE CATEGORY_ID = (SELECT ID FROM TB_CATEGORY WHERE NAME = %(category_name)s) AND ITEM = %(category_element)s)
+"""
+        await cur.execute(
+            sql,
+            {
+                "profile_url": (
+                    f"https://www.linkedin.com/in/{assignment.profile}"
+                    if "linkedin" not in assignment.profile
+                    else assignment.profile
+                ),
+                "category_name": assignment.category_name,
+                "category_element": assignment.category_element,
+            },
+        )
+
+    return await create_cursor(process, True)

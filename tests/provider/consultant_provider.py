@@ -7,7 +7,7 @@ from consultant_info_generator.model.model import (
 )
 
 
-def create_dummy_consultant():
+def create_dummy_consultant() -> Consultant:
     return Consultant(
         given_name="John",
         surname="Doe",
@@ -15,7 +15,7 @@ def create_dummy_consultant():
         cv="John Doe is a consultant with 10 years of experience in the consulting industry. He has a strong background in strategy and operations.",
         industry_name="Consulting",
         geo_location="London",
-        linkedin_profile_url="https://www.linkedin.com/in/john-doe/",
+        linkedin_profile_url="https://www.linkedin.com/in/john-doe",
         experiences=[
             Experience(
                 location="London",
