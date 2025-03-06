@@ -3,11 +3,12 @@ from langchain_core.runnables import RunnableSequence
 from consultant_info_generator.config import cfg
 from consultant_info_generator.service.prompt_factory import prompt_factory
 from consultant_info_generator.model.questions import (
+    Question,
     Questions,
     CategoryQuestion,
     CategoryQuestions,
 )
-from consultant_info_generator.model.category import Categories
+from consultant_info_generator.model.category import Categories, Category
 
 
 def prompt_questions() -> PromptTemplate:
@@ -17,38 +18,29 @@ def prompt_questions() -> PromptTemplate:
 
 def _chain_factory() -> RunnableSequence:
     """Create a chain of functions to extract questions from a text"""
-    model = cfg.selected_llm.with_structured_output(Questions)
+    model = cfg.selected_llm.with_structured_output(Question)
     prompt = prompt_questions()
     return prompt | model
 
 
-def _prepare_questions(categories: Categories) -> dict[str, str]:
+def _prepare_questions(category: Category) -> dict[str, str]:
     """Prepare the categories for the chain"""
-    return {"categories": categories.model_dump_json()}
-
-
-def adapt_categories_to_questions(
-    categories: Categories, questions: Questions
-) -> CategoryQuestions:
-    """Adapt the categories to the questions"""
-    category_questions = []
-    for question in questions.questions:
-        for category in categories.dimensions:
-            if question.category == category.name:
-                category_questions.append(
-                    CategoryQuestion(
-                        name=category.name,
-                        description=category.description,
-                        list_of_values=category.list_of_values,
-                        question=question.question,
-                    )
-                )
-    return CategoryQuestions(category_questions=category_questions)
+    return {"category": category.model_dump_json()}
 
 
 async def generate_questions(categories: Categories) -> CategoryQuestions:
     """Generate questions from the categories"""
     chain = _chain_factory()
-    input = _prepare_questions(categories)
-    questions: Questions = await chain.ainvoke(input)
-    return adapt_categories_to_questions(categories, questions)
+    category_questions = []
+    for category in categories.categories:
+        input = _prepare_questions(category)
+        question: Question = await chain.ainvoke(input)
+        category_questions.append(
+            CategoryQuestion(
+                question=question.question,
+                name=category.name,
+                description=category.description,
+                list_of_values=category.list_of_values,
+            )
+        )
+    return CategoryQuestions(category_questions=category_questions)

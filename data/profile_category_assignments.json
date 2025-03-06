@@ -1,411 +1,807 @@
 {
     "profile_category_assignments": [
         {
-            "category_name": "industry",
-            "category_element": "Computer Software",
-            "reason": "The consultant has over 25 years of professional experience as a Software Engineer, which directly aligns with the Computer Software category.",
+            "category_name": "location",
+            "category_element": "London Area, United Kingdom",
+            "reason": "The consultant's geo_location is explicitly stated as 'London Area, United Kingdom', and he has experience working in 'London, England, United Kingdom', which directly corresponds to this category element.",
             "profile": "gil-palma-fernandes"
         },
         {
-            "category_name": "job title",
-            "category_element": "Software Engineer",
-            "reason": "The consultant has extensive experience as a Software Engineer and has also identified as a Data Scientist in his CV, showcasing relevant skills and work history.",
+            "category_name": "industry",
+            "category_element": "Computer Software",
+            "reason": "The consultant has over 25 years of experience in software engineering and data science, indicating a strong background in computer software and related IT services.",
             "profile": "gil-palma-fernandes"
         },
         {
             "category_name": "company size",
-            "category_element": "Large",
-            "reason": "The consultant has over 25 years of professional experience and has worked on significant projects in the aviation industry, suggesting involvement with large companies.",
+            "category_element": "Medium",
+            "reason": "The consultant has extensive experience working in various companies, which indicates a breadth of exposure, often associated with medium-sized enterprises that balance between the flexibility of small firms and the resources of large corporations.",
+            "profile": "gil-palma-fernandes"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Software Engineer and Data Scientist",
+            "reason": "The consultant has direct experience as a Software Engineer and Data Scientist, which is explicitly stated in their CV.",
             "profile": "gil-palma-fernandes"
         },
         {
             "category_name": "years of experience",
             "category_element": "25+ years",
-            "reason": "The consultant has over 25 years of professional experience as mentioned in their CV.",
+            "reason": "The consultant has over 25 years of professional experience in different companies, as stated in their CV.",
+            "profile": "gil-palma-fernandes"
+        },
+        {
+            "category_name": "education",
+            "category_element": "Bachelor's degree in Computer Science",
+            "reason": "The consultant has a background as a Software Engineer, which likely implies a degree in Computer Science.",
+            "profile": "gil-palma-fernandes"
+        },
+        {
+            "category_name": "skills",
+            "category_element": "Software Development",
+            "reason": "The consultant has extensive experience as a Software Engineer and has worked on various software projects.",
+            "profile": "gil-palma-fernandes"
+        },
+        {
+            "category_name": "interests",
+            "category_element": "Artificial Intelligence",
+            "reason": "The consultant has begun learning about Artificial Intelligence and Deep Learning since 2019 and has participated in several Kaggle competitions.",
+            "profile": "gil-palma-fernandes"
+        },
+        {
+            "category_name": "linkedin profile",
+            "category_element": "https://www.linkedin.com/in/gil-palma-fernandes",
+            "reason": "The consultant's LinkedIn profile matches the provided category element, confirming their identity as Gil Fernandes.",
+            "profile": "gil-palma-fernandes"
+        },
+        {
+            "category_name": "contact information",
+            "category_element": "gil-palma-fernandes@linkedin.com",
+            "reason": "The email provided in the consultant's description matches the format of the category elements listed.",
             "profile": "gil-palma-fernandes"
         },
         {
             "category_name": "location",
-            "category_element": "London Area, United Kingdom",
-            "reason": "The consultant's geo_location is explicitly stated as 'London Area, United Kingdom'.",
-            "profile": "gil-palma-fernandes"
+            "category_element": "London, England",
+            "reason": "The consultant's current geo location is London, England.",
+            "profile": "allanschweitz"
         },
         {
             "category_name": "industry",
             "category_element": "Information Technology & Services",
-            "reason": "The consultant's industry name is explicitly listed as 'Information Technology & Services', and their experience includes roles relevant to this field.",
-            "profile": "allanschweitz"
-        },
-        {
-            "category_name": "job title",
-            "category_element": "Enterprise Solutions Architect",
-            "reason": "The consultant has explicitly stated 'Enterprise Solutions Architect' in their description, indicating this is a key role they fulfill.",
+            "reason": "The consultant has extensive experience and interests in Information Technology & Services, as indicated by their current role and specialization in enterprise architecture, AI, and big data solutions.",
             "profile": "allanschweitz"
         },
         {
             "category_name": "company size",
             "category_element": "Large",
-            "reason": "The consultant has held several high-level positions such as Director of Technology Services and Head of Architecture at Onepoint Consulting, indicating experience in a large organization. Additionally, expertise in Enterprise Architecture and Large Systems Integration supports the categorization as related to large-scale operations.",
+            "reason": "The consultant has extensive experience in Enterprise Solutions Architecture and Large Systems Integration, indicating they have worked on large-scale projects.",
+            "profile": "allanschweitz"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Director of Technology Services",
+            "reason": "The consultant currently holds the position of Director of Technology Services at Onepoint Consulting.",
             "profile": "allanschweitz"
         },
         {
             "category_name": "years of experience",
             "category_element": "16+ years",
-            "reason": "The consultant's experience spans from 2007 to the present, indicating over 16 years in the industry, particularly in roles related to technology and architecture.",
+            "reason": "The consultant has a history of relevant professional experience starting from 2007, which totals over 16 years up to the current date.",
+            "profile": "allanschweitz"
+        },
+        {
+            "category_name": "education",
+            "category_element": "Bachelor's degree in Computer Science",
+            "reason": "Allan's experience in Information Technology & Services and his role as an Enterprise Solutions Architect implies a strong foundation in computer science, likely supported by a bachelor's degree in the field.",
+            "profile": "allanschweitz"
+        },
+        {
+            "category_name": "skills",
+            "category_element": "IT Consulting",
+            "reason": "The consultant has extensive experience in Enterprise Architecture and has held leadership roles in technology services, indicating a strong background in IT consulting.",
+            "profile": "allanschweitz"
+        },
+        {
+            "category_name": "interests",
+            "category_element": "AI",
+            "reason": "The consultant has a current interest in AI, as well as specific experience in LLMs and VLMs which are relevant to the field.",
+            "profile": "allanschweitz"
+        },
+        {
+            "category_name": "linkedin profile",
+            "category_element": "https://www.linkedin.com/in/allanschweitz",
+            "reason": "The consultant's LinkedIn profile matches this category element, as it directly corresponds to Allan Schweitz's professional online presence.",
+            "profile": "allanschweitz"
+        },
+        {
+            "category_name": "contact information",
+            "category_element": "allanschweitz@linkedin.com",
+            "reason": "The consultant's email address is provided in the description and matches the format of the category elements.",
             "profile": "allanschweitz"
         },
         {
             "category_name": "location",
-            "category_element": "London, England",
-            "reason": "The consultant currently resides in London, England and has held multiple positions in London.",
-            "profile": "allanschweitz"
+            "category_element": "Leicester, England",
+            "reason": "The consultant is based in Leicester, England, as stated in their geographical location.",
+            "profile": "suresh-sharma-60336159"
         },
         {
             "category_name": "industry",
             "category_element": "Information Technology & Services",
-            "reason": "The consultant's industry is listed as 'Information Technology & Services', indicating a direct alignment with this category.",
+            "reason": "The consultant is currently working in the Information Technology & Services industry, as stated in his profile.",
+            "profile": "suresh-sharma-60336159"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Large",
+            "reason": "The consultant has held significant roles such as Chief Customer Officer and Head of Business Engagement at large companies like Onepoint Consulting and Meggitt, which are known to operate on a large scale in the Information Technology & Services industry.",
             "profile": "suresh-sharma-60336159"
         },
         {
             "category_name": "job title",
             "category_element": "Chief Customer Officer",
-            "reason": "The consultant currently holds the position of Chief Customer Officer at Onepoint Consulting since July 2023.",
-            "profile": "suresh-sharma-60336159"
-        },
-        {
-            "category_name": "company size",
-            "category_element": "Large",
-            "reason": "Suresh Sharma has held senior positions such as Chief Customer Officer and Head of Business Engagement at large companies like Onepoint Consulting and Meggitt, indicating a strong experience in large organizational settings.",
+            "reason": "Suresh Sharma currently holds the position of Chief Customer Officer at Onepoint Consulting, which aligns directly with this category element.",
             "profile": "suresh-sharma-60336159"
         },
         {
             "category_name": "years of experience",
-            "category_element": "5-10 years",
-            "reason": "Suresh has approximately 5 years of relevant experience in the Information Technology & Services industry based on his roles from 2018 to 2023.",
+            "category_element": "4 years",
+            "reason": "The consultant has a total of 4 years of recent experience in the roles listed, specifically from 2019 to 2023.",
+            "profile": "suresh-sharma-60336159"
+        },
+        {
+            "category_name": "education",
+            "category_element": "Bachelor's degree in Computer Science",
+            "reason": "The consultant has a background in Information Technology & Services, likely indicating a degree related to Computer Science.",
+            "profile": "suresh-sharma-60336159"
+        },
+        {
+            "category_name": "skills",
+            "category_element": "Project Management",
+            "reason": "Suresh has held multiple positions involving project management, including being a Project Manager and a Director of Information Systems, indicating strong expertise in managing projects.",
+            "profile": "suresh-sharma-60336159"
+        },
+        {
+            "category_name": "interests",
+            "category_element": "Client Value Delivery",
+            "reason": "Suresh Sharma's experience as Chief Customer Officer and Head of Business Engagement indicates a strong focus on delivering value to clients through engagement and customer relations.",
+            "profile": "suresh-sharma-60336159"
+        },
+        {
+            "category_name": "linkedin profile",
+            "category_element": "https://www.linkedin.com/in/suresh-sharma-60336159",
+            "reason": "The consultant's LinkedIn profile matches with the URL provided, confirming their identity and professional background in Information Technology & Services.",
+            "profile": "suresh-sharma-60336159"
+        },
+        {
+            "category_name": "contact information",
+            "category_element": "suresh-sharma-60336159@linkedin.com",
+            "reason": "The consultant's email is provided in the description and corresponds to a LinkedIn profile.",
             "profile": "suresh-sharma-60336159"
         },
         {
             "category_name": "location",
-            "category_element": "Leicester, England",
-            "reason": "The consultant's location is listed as Leicester, England.",
-            "profile": "suresh-sharma-60336159"
+            "category_element": "London, England, United Kingdom",
+            "reason": "The consultant has significant work experience in London, specifically mentioned in her roles as Director of Project Delivery and Operations and Head of Project Delivery and Operations.",
+            "profile": "sangeethaviswanathan"
         },
         {
             "category_name": "industry",
             "category_element": "Information Technology & Services",
-            "reason": "Sangeetha has significant experience in the Information Technology & Services industry, as indicated by her current role and past experiences.",
-            "profile": "sangeethaviswanathan"
-        },
-        {
-            "category_name": "job title",
-            "category_element": "Programme Manager",
-            "reason": "Sangeetha is a CSM, DSDM, PRINCE 2 Certified Programme Manager with over 16 years of experience managing project teams, which aligns with the Programme Manager category.",
+            "reason": "Sangeetha has over 16 years of experience in project management related to data management projects, which falls under the Information Technology & Services industry.",
             "profile": "sangeethaviswanathan"
         },
         {
             "category_name": "company size",
-            "category_element": "Medium",
-            "reason": "Sangeetha has significant experience leading project delivery and operations as a Director and Head of Project Delivery, which typically aligns with medium-sized companies that have structured project management roles and a focus on operational efficiency.",
+            "category_element": "Large",
+            "reason": "Sangeetha has over 16 years of experience managing significant projects for large companies like TUI, Axalta, and Toyota, indicating that she typically works on large-scale projects.",
+            "profile": "sangeethaviswanathan"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Director of Project Delivery and Operations",
+            "reason": "Sangeetha has held the position of Director of Project Delivery and Operations at Onepoint Consulting since December 2023, which directly aligns with this category.",
             "profile": "sangeethaviswanathan"
         },
         {
             "category_name": "years of experience",
             "category_element": "16+ years",
-            "reason": "The consultant has an overall work experience of 16+ years as stated in her CV.",
+            "reason": "Sangeetha has an overall work experience of 16+ years as stated in her CV.",
             "profile": "sangeethaviswanathan"
         },
         {
-            "category_name": "location",
-            "category_element": "London, England, United Kingdom",
-            "reason": "The consultant has experience in London as both Director and Head of Project Delivery and Operations.",
+            "category_name": "education",
+            "category_element": "Master’s Degree in Computer Applications",
+            "reason": "Sangeetha has a Master's Degree in Computer Applications as stated in her CV.",
             "profile": "sangeethaviswanathan"
         },
         {
-            "category_name": "industry",
-            "category_element": "Information Technology & Services",
-            "reason": "The consultant's industry experience is primarily in Information Technology & Services, as indicated in his CV, which highlights roles such as Software Architect and IT Consultant.",
-            "profile": "miguelvale"
+            "category_name": "skills",
+            "category_element": "Project Management",
+            "reason": "Sangeetha has extensive experience managing project teams and operations, as indicated by her roles as Director and Head of Project Delivery and Operations.",
+            "profile": "sangeethaviswanathan"
         },
         {
-            "category_name": "job title",
-            "category_element": "IT Consultant",
-            "reason": "Miguel has extensive experience in IT consulting roles, including his positions as Senior IT Consultant and IT Consultant. His background and skills in information technology make this category highly applicable.",
-            "profile": "miguelvale"
+            "category_name": "interests",
+            "category_element": "Training and Talent Acquisition",
+            "reason": "Sangeetha has extensive experience in setting up training departments and facilitating skills development, as evidenced by her role as a Skills Development Facilitator at Toyota. Additionally, she lists 'Talent Acquisition' as one of her skills, indicating her expertise in this area.",
+            "profile": "sangeethaviswanathan"
         },
         {
-            "category_name": "company size",
-            "category_element": "Medium",
-            "reason": "Miguel has extensive experience in various roles within multinational companies, indicating he has worked in a medium-sized organizational context, particularly with his background at Portugal Telecom and One Point Consulting Limited.",
-            "profile": "miguelvale"
+            "category_name": "linkedin profile",
+            "category_element": "https://www.linkedin.com/in/sangeethaviswanathan",
+            "reason": "This profile directly corresponds to the consultant's LinkedIn URL, indicating that it is her own profile.",
+            "profile": "sangeethaviswanathan"
         },
         {
-            "category_name": "years of experience",
-            "category_element": "15+ years",
-            "reason": "Miguel has over 15 years of experience as stated in his CV.",
-            "profile": "miguelvale"
+            "category_name": "contact information",
+            "category_element": "sangeethaviswanathan@linkedin.com",
+            "reason": "The consultant's email is different from the provided category elements, thus no category elements apply to her.",
+            "profile": "sangeethaviswanathan"
         },
         {
             "category_name": "location",
             "category_element": "Lisbon Area, Portugal",
-            "reason": "The consultant, Miguel Vale, has worked in the Lisbon Area, Portugal for several years as an IT Consultant and in other IT roles.",
+            "reason": "Miguel has extensive work experience in the Lisbon Area, Portugal, having held multiple positions in that region.",
             "profile": "miguelvale"
         },
         {
             "category_name": "industry",
             "category_element": "Information Technology & Services",
-            "reason": "The consultant has extensive experience in the IT industry, as indicated in their CV, which aligns perfectly with the 'Information Technology & Services' category.",
+            "reason": "Miguel has over 15 years of experience in the Information Technology sector, with roles such as Software Architect and IT Consultant, which directly aligns with the Information Technology & Services category.",
+            "profile": "miguelvale"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Large",
+            "reason": "Miguel has over 15 years of experience working on multinational projects and for major organizations such as Portugal Telecom, indicating a history of involvement with large enterprises.",
+            "profile": "miguelvale"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Software Architect and Senior Business Analyst",
+            "reason": "Miguel has held the role of Software Architect and Senior Business Analyst as mentioned in his CV, indicating his experience in both architecture and business analysis.",
+            "profile": "miguelvale"
+        },
+        {
+            "category_name": "years of experience",
+            "category_element": "15 years",
+            "reason": "Miguel has over 15 years of experience in the industry, which is explicitly stated in his CV.",
+            "profile": "miguelvale"
+        },
+        {
+            "category_name": "education",
+            "category_element": "5 years BSC Computer Science and Engineering degree",
+            "reason": "Miguel has a 5 years BSC Computer Science and Engineering degree from IST, which directly matches this category element.",
+            "profile": "miguelvale"
+        },
+        {
+            "category_name": "skills",
+            "category_element": "IT Consulting",
+            "reason": "Miguel has held multiple roles as an IT Consultant and has significant experience in the field.",
+            "profile": "miguelvale"
+        },
+        {
+            "category_name": "interests",
+            "category_element": "Client Value Delivery",
+            "reason": "Miguel's description emphasizes his focus on delivering value to clients and achieving defined goals, showcasing his commitment to client satisfaction and value creation.",
+            "profile": "miguelvale"
+        },
+        {
+            "category_name": "linkedin profile",
+            "category_element": "https://www.linkedin.com/in/miguelvale",
+            "reason": "The consultant's LinkedIn profile matches the provided URL, indicating he is indeed the consultant in question.",
+            "profile": "miguelvale"
+        },
+        {
+            "category_name": "contact information",
+            "category_element": "miguelvale@linkedin.com",
+            "reason": "The email provided in the consultant's description matches the category elements which represent consultant emails.",
+            "profile": "miguelvale"
+        },
+        {
+            "category_name": "location",
+            "category_element": "Madurai, Tamil Nadu",
+            "reason": "The consultant's geo_location is explicitly listed as Madurai, Tamil Nadu, which matches the category element.",
+            "profile": "ablessy"
+        },
+        {
+            "category_name": "industry",
+            "category_element": "Information Technology & Services",
+            "reason": "The consultant has significant experience as a UI/UX Designer in the IT industry, which aligns with the Information Technology & Services category.",
+            "profile": "ablessy"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Medium",
+            "reason": "The consultant has experience working in multiple companies, including Onepoint Consulting and Ugra, which are likely medium-sized firms based on the typical scale of IT and consulting firms in the industry.",
             "profile": "ablessy"
         },
         {
             "category_name": "job title",
             "category_element": "Senior UI/UX Designer",
-            "reason": "The consultant has extensive experience as a UI/UX Designer, with their most recent position being a Senior UI/UX Designer at Onepoint Consulting.",
-            "profile": "ablessy"
-        },
-        {
-            "category_name": "company size",
-            "category_element": "Medium",
-            "reason": "The consultant has experience with multiple companies in the IT industry and has worked in roles that suggest a focus on medium-sized organizations. The presence of roles like 'Senior UI/UX Designer' and the range of companies indicates exposure to a collaborative environment typical of medium enterprises.",
+            "reason": "The consultant has extensive experience as a UI/UX Designer, currently holding the position of Senior UI/UX Designer, which directly matches this category element.",
             "profile": "ablessy"
         },
         {
             "category_name": "years of experience",
             "category_element": "4 years",
-            "reason": "The consultant has a total of approximately 4 years of experience in UI/UX design based on the provided work history.",
+            "reason": "The consultant has worked from April 2020 to the present date (2024), totaling approximately 4 years of experience in UI/UX design.",
+            "profile": "ablessy"
+        },
+        {
+            "category_name": "education",
+            "category_element": "Bachelor's degree in Computer Science",
+            "reason": "The consultant's experience in the IT industry and UI/UX design suggests a background in Computer Science, which aligns with this category element.",
+            "profile": "ablessy"
+        },
+        {
+            "category_name": "skills",
+            "category_element": "UI/UX Design",
+            "reason": "The consultant has experience as a UI/UX Designer and possesses skills in design tools and web development languages, making this category applicable.",
+            "profile": "ablessy"
+        },
+        {
+            "category_name": "interests",
+            "category_element": "Client Relationship Manager",
+            "reason": "The consultant has experience as a Client Relationship Manager, indicating a focus on delivering value to clients.",
+            "profile": "ablessy"
+        },
+        {
+            "category_name": "linkedin profile",
+            "category_element": "https://www.linkedin.com/in/ablessy",
+            "reason": "The consultant's LinkedIn profile matches the provided elements, confirming their identity and professional background as a UI/UX Designer.",
+            "profile": "ablessy"
+        },
+        {
+            "category_name": "contact information",
+            "category_element": "ablessy@linkedin.com",
+            "reason": "This is the email address of the consultant as provided in the description.",
             "profile": "ablessy"
         },
         {
             "category_name": "location",
-            "category_element": "Madurai, Tamil Nadu",
-            "reason": "The consultant's CV indicates that they are located in Madurai, Tamil Nadu, which matches one of the category elements.",
-            "profile": "ablessy"
+            "category_element": "London, England, United Kingdom",
+            "reason": "The consultant's geo location is specified as 'London, England' and he has experience working in London, England, United Kingdom.",
+            "profile": "alexander-polev-cto"
         },
         {
             "category_name": "industry",
             "category_element": "Information Technology & Services",
-            "reason": "The consultant has extensive experience in enterprise architecture and cloud technologies, which aligns with the Information Technology & Services category.",
+            "reason": "The consultant has extensive experience in Information Technology, particularly in data architecture and cloud technologies, which aligns with this category.",
+            "profile": "alexander-polev-cto"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Large",
+            "reason": "The consultant has extensive experience working with significant projects and companies such as TUI, AOL Broadband, and Meggitt, indicating a focus on large-scale implementations and enterprise-grade solutions.",
             "profile": "alexander-polev-cto"
         },
         {
             "category_name": "job title",
             "category_element": "Chief Technology Officer",
-            "reason": "The consultant is currently serving as the Chief Technology Officer at Onepoint Consulting, which aligns directly with this category.",
-            "profile": "alexander-polev-cto"
-        },
-        {
-            "category_name": "company size",
-            "category_element": "Large",
-            "reason": "The consultant has extensive experience with large organizations such as TUI, AOL, and Meggitt, which indicates a background suited for large-scale enterprise environments.",
+            "reason": "Alexander Polev holds the position of Chief Technology Officer at Onepoint Consulting, which directly matches the category element.",
             "profile": "alexander-polev-cto"
         },
         {
             "category_name": "years of experience",
             "category_element": "20 years",
-            "reason": "The consultant has over 20 years of experience as stated in the CV.",
+            "reason": "The consultant has over 20 years of experience in enterprise architecture and related fields, which directly matches the category element of 20 years.",
+            "profile": "alexander-polev-cto"
+        },
+        {
+            "category_name": "education",
+            "category_element": "Bachelor's degree in Computer Science",
+            "reason": "The consultant has extensive knowledge in data architecture and technologies related to computer science, which suggests a strong educational background in the field.",
+            "profile": "alexander-polev-cto"
+        },
+        {
+            "category_name": "skills",
+            "category_element": "Big Data",
+            "reason": "The consultant has extensive knowledge and experience in Big Data processing and has worked on various projects involving big data solutions using Apache Hadoop and Apache Spark.",
+            "profile": "alexander-polev-cto"
+        },
+        {
+            "category_name": "interests",
+            "category_element": "Big Data processing",
+            "reason": "The consultant has extensive experience in Big Data processing and has led implementation projects using technologies like Apache Hadoop and Apache Spark.",
+            "profile": "alexander-polev-cto"
+        },
+        {
+            "category_name": "linkedin profile",
+            "category_element": "https://www.linkedin.com/in/alexander-polev-cto",
+            "reason": "The consultant's name matches the LinkedIn profile provided, confirming this is the correct profile for Alexander Polev.",
+            "profile": "alexander-polev-cto"
+        },
+        {
+            "category_name": "contact information",
+            "category_element": "shashinbshah@linkedin.com",
+            "reason": "This email address belongs to a consultant listed in the same category of LinkedIn profiles, suggesting a possible connection or relevance in the context of professional networking.",
             "profile": "alexander-polev-cto"
         },
         {
             "category_name": "location",
-            "category_element": "London, England",
-            "reason": "The consultant's geo location is specified as 'London, England', which matches the category element.",
-            "profile": "alexander-polev-cto"
+            "category_element": "London Area, United Kingdom",
+            "reason": "The consultant's geo_location and experience locations include 'London Area, United Kingdom' and 'London, England, United Kingdom', which are part of the listed category elements.",
+            "profile": "jakeraeburn"
         },
         {
             "category_name": "industry",
             "category_element": "Information Technology & Services",
-            "reason": "The consultant's experience and current position as a Software Engineer clearly align with the Information Technology & Services industry, as stated in the industry_name field.",
-            "profile": "jakeraeburn"
-        },
-        {
-            "category_name": "job title",
-            "category_element": "Software Engineer",
-            "reason": "The consultant has experience as a Software Engineer and a solid foundation in full-stack development, which aligns with the category of Software Engineer.",
+            "reason": "The consultant has a solid foundation in software engineering, full-stack development, and cloud solutions, which aligns with the Information Technology & Services industry.",
             "profile": "jakeraeburn"
         },
         {
             "category_name": "company size",
             "category_element": "Medium",
-            "reason": "The consultant has experience at Onepoint Consulting, which is a medium-sized consulting firm that provides a range of IT services, aligning with the consultant's skills and experience in software engineering and development.",
+            "reason": "Jake Raeburn has experience working at Onepoint Consulting, which is a medium-sized consulting firm, and his roles suggest a level of responsibility and expertise that aligns with medium-sized projects in the Information Technology & Services industry.",
+            "profile": "jakeraeburn"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Software Engineer",
+            "reason": "The consultant has explicitly identified themselves as a Software Engineer with relevant experience in full-stack development and associated technologies.",
             "profile": "jakeraeburn"
         },
         {
             "category_name": "years of experience",
             "category_element": "4 years",
-            "reason": "The consultant has relevant experience from their roles as a Junior Software Engineer and Customer Assistant, totaling approximately 4 years of work experience in the Information Technology field.",
+            "reason": "The consultant, Jake Raeburn, has approximately 4 years of experience in software engineering as a Junior Software Engineer and currently as a Software Engineer, making '4 years' the most applicable category element.",
+            "profile": "jakeraeburn"
+        },
+        {
+            "category_name": "education",
+            "category_element": "Bachelor's degree in Computer Science",
+            "reason": "The consultant is a Software Engineer, indicating a background likely related to Computer Science, although the exact degree is not explicitly stated.",
+            "profile": "jakeraeburn"
+        },
+        {
+            "category_name": "skills",
+            "category_element": "Software Development",
+            "reason": "The consultant has a solid foundation in full-stack development and explicitly mentions experience in software development.",
+            "profile": "jakeraeburn"
+        },
+        {
+            "category_name": "interests",
+            "category_element": "Artificial Intelligence",
+            "reason": "The consultant mentions a growing interest in Artificial Intelligence, indicating a focus on this area.",
+            "profile": "jakeraeburn"
+        },
+        {
+            "category_name": "linkedin profile",
+            "category_element": "https://www.linkedin.com/in/jakeraeburn",
+            "reason": "The consultant's name and LinkedIn profile match the provided category element.",
+            "profile": "jakeraeburn"
+        },
+        {
+            "category_name": "contact information",
+            "category_element": "jakeraeburn@linkedin.com",
+            "reason": "This email corresponds to the consultant's profile, and it is essential for identifying the consultant.",
             "profile": "jakeraeburn"
         },
         {
             "category_name": "location",
-            "category_element": "London Area, United Kingdom",
-            "reason": "The consultant has listed 'London Area, United Kingdom' as their geo location and has work experience in this area.",
-            "profile": "jakeraeburn"
+            "category_element": "London, England, United Kingdom",
+            "reason": "The consultant has experience listed in London, United Kingdom, which corresponds to the category element for London.",
+            "profile": "rita-rajabally-96135629"
         },
         {
             "category_name": "industry",
             "category_element": "Information Technology & Services",
-            "reason": "The consultant's industry name is explicitly stated as 'Information Technology & Services', making this category directly applicable.",
-            "profile": "rita-rajabally-96135629"
-        },
-        {
-            "category_name": "job title",
-            "category_element": "Senior Finance Administrator",
-            "reason": "The consultant has experience listed as a Senior Finance Administrator at One Point Consulting Limited, which directly matches the category element.",
+            "reason": "The consultant's industry name is 'Information Technology & Services', which directly matches the category element.",
             "profile": "rita-rajabally-96135629"
         },
         {
             "category_name": "company size",
             "category_element": "Small",
-            "reason": "The consultant has experience with One Point Consulting Limited, which suggests a smaller consulting firm typically involved in specialized services.",
+            "reason": "The consultant's experience is with One Point Consulting Limited, which is likely a smaller consulting firm based on the nature of the company name and the title of Senior Finance Administrator.",
+            "profile": "rita-rajabally-96135629"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Information Technology Consultant",
+            "reason": "The consultant is listed in the Information Technology & Services industry, which aligns with the role of an Information Technology Consultant.",
             "profile": "rita-rajabally-96135629"
         },
         {
             "category_name": "years of experience",
             "category_element": "16+ years",
-            "reason": "Rita has been working since February 2006 and has at least 17 years of experience in the industry.",
+            "reason": "Rita Rajabally began her career in February 2006 and has approximately 17 years of experience as of now, which fits into the '16+ years' category.",
+            "profile": "rita-rajabally-96135629"
+        },
+        {
+            "category_name": "education",
+            "category_element": "Bachelor's degree in Computer Science",
+            "reason": "The consultant's background in IT suggests relevance to a Computer Science degree, fitting within the industry.",
+            "profile": "rita-rajabally-96135629"
+        },
+        {
+            "category_name": "skills",
+            "category_element": "Project Management",
+            "reason": "The consultant has 'Project Management' listed as a skill in their profile, indicating proficiency in this area.",
+            "profile": "rita-rajabally-96135629"
+        },
+        {
+            "category_name": "interests",
+            "category_element": "Client Value Delivery",
+            "reason": "Rita's role as a Senior Finance Administrator likely involves delivering value to clients through financial management and support, which aligns with the category of Client Value Delivery.",
+            "profile": "rita-rajabally-96135629"
+        },
+        {
+            "category_name": "linkedin profile",
+            "category_element": "https://www.linkedin.com/in/rita-rajabally-96135629",
+            "reason": "The consultant's LinkedIn profile matches the provided category elements.",
+            "profile": "rita-rajabally-96135629"
+        },
+        {
+            "category_name": "contact information",
+            "category_element": "N/A",
+            "reason": "None of the provided category elements (email addresses) match the consultant's email address.",
             "profile": "rita-rajabally-96135629"
         },
         {
             "category_name": "location",
             "category_element": "London, England",
-            "reason": "The consultant has experience listed in London, United Kingdom, which corresponds to the category element 'London, England'.",
-            "profile": "rita-rajabally-96135629"
+            "reason": "The consultant's geo location is explicitly listed as London, England.",
+            "profile": "elza-braeken-330ba31a6"
         },
         {
             "category_name": "industry",
             "category_element": "Information Technology & Services",
-            "reason": "The consultant's industry name is 'Information Technology & Services', indicating a direct relevance to this category.",
-            "profile": "elza-braeken-330ba31a6"
-        },
-        {
-            "category_name": "job title",
-            "category_element": "Information Governance and Risk Manager",
-            "reason": "The consultant has directly held the title of Information Governance and Risk Manager at Onepoint Consulting since March 2018, which aligns perfectly with the category element.",
+            "reason": "The consultant's industry is explicitly listed as 'Information Technology & Services', indicating a direct alignment with this category.",
             "profile": "elza-braeken-330ba31a6"
         },
         {
             "category_name": "company size",
             "category_element": "Medium",
-            "reason": "The consultant has experience in various roles, including a managerial position at UCL and information governance at Onepoint Consulting, which suggests a level of experience typically associated with medium-sized companies.",
+            "reason": "The consultant has experience working in both a large organization (UCL) and a medium-sized consulting firm (Onepoint Consulting), which suggests a medium category assignment.",
+            "profile": "elza-braeken-330ba31a6"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Information Technology Consultant",
+            "reason": "The consultant has experience in Information Governance and Risk Management, which aligns with the role of an Information Technology Consultant.",
             "profile": "elza-braeken-330ba31a6"
         },
         {
             "category_name": "years of experience",
-            "category_element": "20 years",
-            "reason": "The consultant has a total of 22 years of experience, calculated from the years worked in various roles: 1995 to 2000 (5 years) + 2000 to 2017 (17 years) + 2018 to present (5+ years). Overall, this exceeds 20 years.",
+            "category_element": "25+ years",
+            "reason": "The consultant has a total of 22 years of experience, which falls into the 25+ years category as they have more than 20 years.",
+            "profile": "elza-braeken-330ba31a6"
+        },
+        {
+            "category_name": "education",
+            "category_element": "Bachelor's degree in Computer Science",
+            "reason": "The consultant does not list a Bachelor's degree in Computer Science or any related field in the provided description.",
+            "profile": "elza-braeken-330ba31a6"
+        },
+        {
+            "category_name": "skills",
+            "category_element": "Team Leadership",
+            "reason": "The consultant has experience as a Team Leader, indicating strong leadership capabilities.",
+            "profile": "elza-braeken-330ba31a6"
+        },
+        {
+            "category_name": "interests",
+            "category_element": "Client Value Delivery",
+            "reason": "The consultant has experience in Information Governance which involves managing and delivering value to clients by ensuring compliance and risk management in data handling.",
+            "profile": "elza-braeken-330ba31a6"
+        },
+        {
+            "category_name": "linkedin profile",
+            "category_element": "https://www.linkedin.com/in/elza-braeken-330ba31a6",
+            "reason": "The consultant's LinkedIn profile matches the provided URL, confirming her identity and professional background in Information Technology & Services.",
+            "profile": "elza-braeken-330ba31a6"
+        },
+        {
+            "category_name": "contact information",
+            "category_element": "elza-braeken-330ba31a6@linkedin.com",
+            "reason": "The email belongs to the consultant Elza Braeken, matching her LinkedIn profile.",
             "profile": "elza-braeken-330ba31a6"
         },
         {
             "category_name": "location",
-            "category_element": "London, England",
-            "reason": "The consultant has a geo location listed as 'London, England' and also worked in London, England, United Kingdom.",
-            "profile": "elza-braeken-330ba31a6"
+            "category_element": "Enfield, England",
+            "reason": "The consultant's geo_location is explicitly listed as 'Enfield, England' in their profile.",
+            "profile": "shashinbshah"
         },
         {
             "category_name": "industry",
             "category_element": "Information Technology & Services",
-            "reason": "The consultant has over 35 years of experience in delivering Technology Strategies and Architectures across various industries, indicating a strong background in the Information Technology & Services sector.",
-            "profile": "shashinbshah"
-        },
-        {
-            "category_name": "job title",
-            "category_element": "Founder & CEO",
-            "reason": "The consultant has experience as a Founder & CEO at Onepoint since 2005.",
+            "reason": "The consultant has over 35 years of experience in delivering technology strategies and solutions, primarily within the Information Technology and Services industry. Their roles have included positions such as IT Director and Architecture Consultant, showing a strong alignment with this category.",
             "profile": "shashinbshah"
         },
         {
             "category_name": "company size",
             "category_element": "Large",
-            "reason": "The consultant has over 35 years of experience and has worked with notable large organizations such as Flight Centre, Meggitt, and Tesco Telecom, indicating a capacity to operate within large scale environments.",
+            "reason": "The consultant has extensive experience in leading teams and managing complex technology strategies for large organizations, indicating a strong capability to operate within large corporate environments.",
+            "profile": "shashinbshah"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Managing Director",
+            "reason": "The consultant has held the position of Managing Director at OSSCube UK Ltd from October 2010 to September 2018.",
             "profile": "shashinbshah"
         },
         {
             "category_name": "years of experience",
             "category_element": "35 years",
-            "reason": "The consultant has over 35 years of experience in delivering technology strategies and solutions, as stated in their CV.",
+            "reason": "The consultant has over 35 years of experience in delivering business aligned technology strategies, architectures, and systems.",
+            "profile": "shashinbshah"
+        },
+        {
+            "category_name": "education",
+            "category_element": "Bachelor's degree in Computer Science",
+            "reason": "The consultant has a strong background in IT and technology, which typically requires a degree in Computer Science.",
+            "profile": "shashinbshah"
+        },
+        {
+            "category_name": "skills",
+            "category_element": "IT Consulting",
+            "reason": "The consultant has extensive experience in IT and has held multiple leadership roles in technology strategy and architecture, which aligns with IT consulting.",
+            "profile": "shashinbshah"
+        },
+        {
+            "category_name": "interests",
+            "category_element": "Innovating with AI",
+            "reason": "The consultant mentions innovating with AI as part of their approach to solving complex digital challenges, indicating experience and relevance in this area.",
+            "profile": "shashinbshah"
+        },
+        {
+            "category_name": "linkedin profile",
+            "category_element": "https://www.linkedin.com/in/shashinbshah",
+            "reason": "The consultant's LinkedIn profile matches the provided dimension as he is a well-experienced IT professional with a strong background in technology strategy, architecture, and consulting, which aligns with the profiles of other consultants listed.",
+            "profile": "shashinbshah"
+        },
+        {
+            "category_name": "contact information",
+            "category_element": "shashinbshah@linkedin.com",
+            "reason": "The consultant's email matches the category element listed.",
             "profile": "shashinbshah"
         },
         {
             "category_name": "location",
-            "category_element": "Enfield, England",
-            "reason": "The consultant's geo_location is specifically listed as Enfield, England, indicating a direct relevance to this category element.",
-            "profile": "shashinbshah"
+            "category_element": "Athens, Attiki",
+            "reason": "The consultant currently resides and works in Athens, Attiki, Greece, which is explicitly mentioned in their CV.",
+            "profile": "murtaza-hassani"
         },
         {
             "category_name": "industry",
             "category_element": "Information Technology & Services",
-            "reason": "The consultant is a software engineer with experience in front-end and back-end technologies, which directly aligns with the Information Technology & Services industry.",
-            "profile": "murtaza-hassani"
-        },
-        {
-            "category_name": "job title",
-            "category_element": "Founder & CEO",
-            "reason": "The consultant is currently the Founder and CEO of Afghan Geeks since January 2023.",
+            "reason": "The consultant has 4 years of professional experience in software engineering, which falls under the Information Technology & Services category.",
             "profile": "murtaza-hassani"
         },
         {
             "category_name": "company size",
             "category_element": "Small",
-            "reason": "Murtaza is the Founder and CEO of Afghan Geeks, which typically indicates a small company size, as startups or individual-led companies are usually classified as small.",
+            "reason": "Murtaza is the Founder and CEO of 'Afghan Geeks', indicating he is likely involved in a small company or startup environment.",
+            "profile": "murtaza-hassani"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Software Engineer",
+            "reason": "Murtaza is a software engineer with 4 years of experience, specializing in front-end technologies and backend development.",
             "profile": "murtaza-hassani"
         },
         {
             "category_name": "years of experience",
             "category_element": "4 years",
-            "reason": "The consultant, Murtaza Hassani, has a total of 4 years of professional experience as stated in his CV.",
+            "reason": "The consultant has 4 years of professional experience as stated in their CV.",
+            "profile": "murtaza-hassani"
+        },
+        {
+            "category_name": "education",
+            "category_element": "Bachelor's degree in Computer Science",
+            "reason": "The consultant is a software engineer, indicating a background likely in computer science or a related field, which aligns with this education category.",
+            "profile": "murtaza-hassani"
+        },
+        {
+            "category_name": "skills",
+            "category_element": "Apollo GraphQL",
+            "reason": "The consultant has listed Apollo GraphQL as one of their skills, indicating proficiency in this technology.",
+            "profile": "murtaza-hassani"
+        },
+        {
+            "category_name": "interests",
+            "category_element": "Artificial Intelligence",
+            "reason": "The consultant is exploring AI technologies, including Langchain, OpenAI, and prompt engineering.",
+            "profile": "murtaza-hassani"
+        },
+        {
+            "category_name": "linkedin profile",
+            "category_element": "https://www.linkedin.com/in/murtaza-hassani",
+            "reason": "The consultant Murtaza Hassani has a LinkedIn profile that matches the provided URL, indicating his professional identity and expertise in software engineering.",
+            "profile": "murtaza-hassani"
+        },
+        {
+            "category_name": "contact information",
+            "category_element": "murtaza-hassani@linkedin.com",
+            "reason": "The email address matches the consultant's email provided in the description.",
             "profile": "murtaza-hassani"
         },
         {
             "category_name": "location",
-            "category_element": "Athens, Attiki",
-            "reason": "The consultant has listed Athens, Attiki as his primary location in his CV and has experience working there.",
-            "profile": "murtaza-hassani"
+            "category_element": "Pune, Maharashtra",
+            "reason": "The consultant has multiple experiences listed in Pune, Maharashtra, India, indicating this location is relevant to her career.",
+            "profile": "maithilishetty"
         },
         {
             "category_name": "industry",
             "category_element": "Information Technology & Services",
-            "reason": "The consultant's industry is explicitly stated as 'Information Technology & Services', indicating direct relevance to this category.",
+            "reason": "The consultant is currently in the Information Technology & Services industry, with relevant experience in software engineering and project management.",
+            "profile": "maithilishetty"
+        },
+        {
+            "category_name": "company size",
+            "category_element": "Large",
+            "reason": "The consultant has held senior positions such as Director of Operations and worked for notable companies like Oracle Financial Services, indicating experience in large organizations.",
             "profile": "maithilishetty"
         },
         {
             "category_name": "job title",
             "category_element": "Director of Operations - India",
-            "reason": "The consultant holds the position of 'Director of Operations - India' at Onepoint Consulting, which directly matches the category element.",
-            "profile": "maithilishetty"
-        },
-        {
-            "category_name": "company size",
-            "category_element": "Medium",
-            "reason": "The consultant has experience working in positions such as Director of Operations and Operations Officer at Onepoint Consulting, which suggests involvement in a medium-sized company context, given the typical scope of operations in the IT and services industry in Pune.",
+            "reason": "Maithili Shetty currently holds the position of Director of Operations - India at Onepoint Consulting.",
             "profile": "maithilishetty"
         },
         {
             "category_name": "years of experience",
             "category_element": "25+ years",
-            "reason": "The consultant has a total experience from 1989 to 2025, which sums up to 36 years.",
+            "reason": "The consultant has experience spanning from 1989 to present, indicating more than 25 years in the field.",
+            "profile": "maithilishetty"
+        },
+        {
+            "category_name": "education",
+            "category_element": "Bachelor's degree in Computer Science",
+            "reason": "The consultant has a background in software engineering and IT, implying a strong foundation in computer science.",
+            "profile": "maithilishetty"
+        },
+        {
+            "category_name": "skills",
+            "category_element": "IT Consulting",
+            "reason": "The consultant has experience working as a Consultant at Oracle Financial Services Software Ltd and has held leadership positions in operations, indicating a role in IT consulting.",
+            "profile": "maithilishetty"
+        },
+        {
+            "category_name": "interests",
+            "category_element": "Client Value Delivery",
+            "reason": "The consultant has experience in operations management and consulting roles, which typically involve delivering value to clients through project management and service delivery.",
+            "profile": "maithilishetty"
+        },
+        {
+            "category_name": "linkedin profile",
+            "category_element": "https://www.linkedin.com/in/maithilishetty",
+            "reason": "The consultant's LinkedIn profile matches the assigned category element, indicating that she is a consultant with relevant experience in the Information Technology & Services industry.",
+            "profile": "maithilishetty"
+        },
+        {
+            "category_name": "contact information",
+            "category_element": "maithilishetty@linkedin.com",
+            "reason": "The email address matches the consultant's provided email in the description.",
             "profile": "maithilishetty"
         },
         {
             "category_name": "location",
-            "category_element": "Pune, Maharashtra",
-            "reason": "The consultant's geo location is explicitly listed as 'Pune, Maharashtra', and all their work experiences also indicate Pune as the location.",
-            "profile": "maithilishetty"
-        },
-        {
-            "category_name": "industry",
-            "category_element": "Software Engineer",
-            "reason": "Louisa has a Bachelor's degree in Computer Science and works as a Software Engineer at Lloyds Banking Group, which falls under the Computer Software category.",
+            "category_element": "London, England, United Kingdom",
+            "reason": "The consultant has experience as a Software Engineer and IT Consultant in London, England, United Kingdom, as stated in their CV.",
             "profile": "louisa-ekanem"
         },
         {
-            "category_name": "job title",
-            "category_element": "IT Consultant/ C# Developer",
-            "reason": "Louisa has over 4 years of experience as an IT Consultant and a C# Developer, which aligns perfectly with the category of IT Consultant/ C# Developer.",
+            "category_name": "industry",
+            "category_element": "Banking",
+            "reason": "The consultant has worked at Lloyds Banking Group and Bank of America Merrill Lynch, both of which are financial institutions, indicating expertise in the banking sector.",
             "profile": "louisa-ekanem"
         },
         {
             "category_name": "company size",
             "category_element": "Large",
-            "reason": "Louisa has worked for large companies such as Lloyds Banking Group and Bank of America Merrill Lynch, which are both considered large organizations in the finance and technology sectors.",
+            "reason": "The consultant has experience working with large organizations such as Lloyds Banking Group and Bank of America Merrill Lynch, which are both large companies in the financial services industry.",
+            "profile": "louisa-ekanem"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Information Technology Consultant",
+            "reason": "The consultant has experience listed as an Information Technology Consultant at FDM Group, which directly aligns with this category element.",
             "profile": "louisa-ekanem"
         },
         {
@@ -415,39 +811,93 @@
             "profile": "louisa-ekanem"
         },
         {
-            "category_name": "location",
-            "category_element": "London, England",
-            "reason": "The consultant has worked as a Software Engineer and IT Consultant in London, England, United Kingdom.",
+            "category_name": "education",
+            "category_element": "Bachelor's degree in Computer Science",
+            "reason": "The consultant explicitly mentions holding a Bachelor's degree in Computer Science.",
             "profile": "louisa-ekanem"
+        },
+        {
+            "category_name": "skills",
+            "category_element": "IT Consulting",
+            "reason": "The consultant has over 4 years of experience as an IT Consultant and has listed IT Consulting as a skill.",
+            "profile": "louisa-ekanem"
+        },
+        {
+            "category_name": "interests",
+            "category_element": "Client Value Delivery",
+            "reason": "Louisa has experience as an IT Consultant, where she focuses on delivering high-quality software products that meet the needs of diverse stakeholders, which aligns with the concept of Client Value Delivery.",
+            "profile": "louisa-ekanem"
+        },
+        {
+            "category_name": "linkedin profile",
+            "category_element": "https://www.linkedin.com/in/louisa-ekanem",
+            "reason": "The consultant's own LinkedIn profile is included in the list, confirming her identity and professional background.",
+            "profile": "louisa-ekanem"
+        },
+        {
+            "category_name": "contact information",
+            "category_element": "louisa-ekanem@linkedin.com",
+            "reason": "The consultant's email matches the category element, indicating that this element applies to the consultant.",
+            "profile": "louisa-ekanem"
+        },
+        {
+            "category_name": "location",
+            "category_element": "Greater London, England",
+            "reason": "The consultant's geo_location is Greater London, England, which matches the category element.",
+            "profile": "darren-miller-1035743"
         },
         {
             "category_name": "industry",
             "category_element": "Banking",
-            "reason": "The consultant has extensive experience working with banking applications, specifically highlighted by their role as Product Lead for the design and implementation of monitoring solutions at Lloyds Banking Group, which is a banking institution.",
-            "profile": "darren-miller-1035743"
-        },
-        {
-            "category_name": "job title",
-            "category_element": "Ecommerce Operations Team Lead",
-            "reason": "Darren has experience as an Ecommerce Operations Team Lead at Harrods, where he established and introduced ITIL and DevOps frameworks to the operations team.",
+            "reason": "Darren has extensive experience in banking applications, having served as a product lead and subject matter expert (SME) for monitoring critical payment and business applications at Lloyds Banking Group, which directly relates to the banking industry.",
             "profile": "darren-miller-1035743"
         },
         {
             "category_name": "company size",
             "category_element": "Large",
-            "reason": "Darren Miller has extensive experience working with large organizations such as Lloyds Banking Group, Harrods, and John Lewis, which are all considered large enterprises. His roles involved significant responsibilities, including product lead and SME for critical payment systems, indicating a high level of complexity and scale.",
+            "reason": "Darren Miller has over 20 years of experience in high-impact roles at large organizations such as Lloyds Banking Group, Harrods, and John Lewis, which are all notable large enterprises. His work involves critical systems in banking and e-commerce, indicating a significant level of responsibility and complexity typical of large organizations.",
+            "profile": "darren-miller-1035743"
+        },
+        {
+            "category_name": "job title",
+            "category_element": "Senior Technical Lead",
+            "reason": "Darren has experience as a Senior Technical Lead at Lloyds Banking Group, which aligns with the category element.",
             "profile": "darren-miller-1035743"
         },
         {
             "category_name": "years of experience",
             "category_element": "20 years",
-            "reason": "Darren has over 20 years of in-depth experience in designing and developing monitoring solutions, as stated in his CV.",
+            "reason": "The consultant has over 20 years of in-depth experience in designing and developing End-to-End monitoring solutions, as stated in his CV.",
             "profile": "darren-miller-1035743"
         },
         {
-            "category_name": "location",
-            "category_element": "Greater London, England",
-            "reason": "The consultant is based in Greater London, England, which matches the specified category element.",
+            "category_name": "education",
+            "category_element": "Bachelor's degree in Computer Science",
+            "reason": "The consultant has extensive experience in designing and developing software solutions, which typically requires a background in computer science, although the exact degree is not specified.",
+            "profile": "darren-miller-1035743"
+        },
+        {
+            "category_name": "skills",
+            "category_element": "ITIL",
+            "reason": "The consultant has introduced the ITIL framework to Harrods E-commerce Operations Team and is ITIL v3 Foundations Certified.",
+            "profile": "darren-miller-1035743"
+        },
+        {
+            "category_name": "interests",
+            "category_element": "Client Value Delivery",
+            "reason": "Darren has extensive experience in designing and implementing solutions that enhance client operations and improve customer experiences, such as the call centre website for John Lewis and the monitoring solutions for Harrods.com.",
+            "profile": "darren-miller-1035743"
+        },
+        {
+            "category_name": "linkedin profile",
+            "category_element": "https://www.linkedin.com/in/darren-miller-1035743",
+            "reason": "The consultant is Darren Miller, and the provided LinkedIn profile matches his name and details mentioned in the CV.",
+            "profile": "darren-miller-1035743"
+        },
+        {
+            "category_name": "contact information",
+            "category_element": "darren-miller-1035743@linkedin.com",
+            "reason": "The consultant's email matches the given category element.",
             "profile": "darren-miller-1035743"
         }
     ]

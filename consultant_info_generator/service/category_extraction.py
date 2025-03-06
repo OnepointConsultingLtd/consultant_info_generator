@@ -42,7 +42,7 @@ def _flatten_dimensions(dimension_list: list[Categories]) -> Categories:
     """Flatten the dimensions from the list"""
     all_dims = {}
     for dims in dimension_list:
-        for dim in dims.dimensions:
+        for dim in dims.categories:
             if dim.name not in all_dims:
                 all_dims[dim.name] = dim
             else:
@@ -50,7 +50,7 @@ def _flatten_dimensions(dimension_list: list[Categories]) -> Categories:
                     all_dims[dim.name].list_of_values + dim.list_of_values
                 )
                 all_dims[dim.name].list_of_values = list(merged_list_of_values)
-    return Categories(dimensions=list(all_dims.values()))
+    return Categories(categories=list(all_dims.values()))
 
 
 async def extract_from_profiles(linkedin_profiles: list[str]) -> Categories:

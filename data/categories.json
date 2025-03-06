@@ -1,35 +1,33 @@
 {
-    "dimensions": [
+    "categories": [
         {
             "name": "location",
-            "description": "The location of the consultant",
+            "description": "The geographical location of the consultant",
             "list_of_values": [
-                "Orpington, England, United Kingdom",
                 "Enfield, England",
-                "Manchester Area, United Kingdom",
-                "Athens, Attiki",
-                "Japan",
-                "Madurai, Tamil Nadu",
-                "Salford, United Kingdom",
-                "Hyderabad, Telangana, India",
-                "Lisbon Area, Portugal",
-                "Greater London, England",
-                "Antwerp, Belgium",
-                "London Area, United Kingdom",
-                "Coventry, England, United Kingdom",
-                "London, England",
-                "Leicester, England",
                 "Durban Area, South Africa",
-                "Pune, Maharashtra"
+                "Manchester Area, United Kingdom",
+                "Hyderabad, Telangana, India",
+                "Antwerp, Belgium",
+                "Pune, Maharashtra",
+                "Lisbon Area, Portugal",
+                "Madurai, Tamil Nadu",
+                "London, England",
+                "Greater London, England",
+                "London, England, United Kingdom",
+                "Leicester, England",
+                "Coventry, England, United Kingdom",
+                "Athens, Attiki",
+                "London Area, United Kingdom"
             ]
         },
         {
             "name": "industry",
-            "description": "The industry of the consultant",
+            "description": "The industry in which the consultant operates",
             "list_of_values": [
+                "Banking",
                 "Computer Software",
-                "Information Technology & Services",
-                "Banking"
+                "Information Technology & Services"
             ]
         },
         {
@@ -37,140 +35,128 @@
             "description": "The size of the company the consultant works at",
             "list_of_values": [
                 "Small",
-                "Medium",
-                "Large"
+                "Large",
+                "Medium"
             ]
         },
         {
             "name": "job title",
             "description": "The job title of the consultant",
             "list_of_values": [
-                "Founder & CEO",
-                "Operations Officer",
+                "Software Architect and Senior Business Analyst",
+                "Director of Project Delivery and Operations",
                 "Director of Technology Services",
-                "Information Governance and Risk Manager",
-                "Data Scientist",
-                "Ecommerce Operations Team Lead",
-                "Associate",
-                "Programme Manager",
-                "Interim Programme Director for Customer Experience",
-                "Enterprise Solutions Architect",
-                "Consultant",
-                "IT Consultant/ C# Developer",
+                "Software Engineer and Data Scientist",
+                "Software Engineer",
                 "Director of Operations - India",
                 "Chief Customer Officer",
                 "Senior UI/UX Designer",
-                "IT Indirect Retail Team Leader",
-                "Group Leader, Online Application Support",
-                "Architecture Consultant",
-                "Software Engineer",
-                "Chief Technology Officer",
                 "Senior Technical Lead",
                 "Managing Director",
-                "Sr Software Engineer",
-                "Senior Finance Administrator",
+                "Chief Technology Officer",
                 "Information Technology Consultant",
-                "Project Manager",
-                "Head of Business Engagement"
+                "Founder & CEO"
             ]
         },
         {
             "name": "years of experience",
-            "description": "The years of experience of the consultant",
+            "description": "The total years of experience of the consultant",
             "list_of_values": [
                 "25+ years",
-                "16+ years",
-                "5-10 years",
-                "15+ years",
+                "4 years",
                 "35 years",
-                "20 years",
-                "10-15 years",
-                "4 years"
+                "16+ years",
+                "15 years",
+                "20 years"
             ]
         },
         {
             "name": "education",
-            "description": "The education of the consultant",
+            "description": "The educational qualifications of the consultant",
             "list_of_values": [
                 "Bachelor's degree in Computer Science",
                 "Agile Software Development: Scrum for Developers",
-                "BSC Computer Science and Engineering",
-                "PRINCE 2 Certified",
-                "Bachelors in Chemistry",
                 "Master\u2019s Degree in Computer Applications",
-                "Certifications in UX Research for Agile Teams"
+                "Bachelors in Chemistry",
+                "Certifications in UX Research for Agile Teams",
+                "5 years BSC Computer Science and Engineering degree"
             ]
         },
         {
             "name": "skills",
-            "description": "The skills of the consultant",
+            "description": "The specific skills possessed by the consultant",
             "list_of_values": [
-                "Solution Architecture",
-                "Training",
-                "Software Development",
-                "Software Project Management",
-                "Leadership",
-                "Front-End Development",
-                "Apollo GraphQL",
-                "Program Management",
                 "IT Consulting",
-                "Agile Project Management",
-                "Team Leadership",
-                "IT Strategy",
-                "Enterprise Architecture",
-                "Cloud Computing",
-                "Microsoft SQL Server",
-                "C++",
-                "E-commerce",
-                "PCI DSS",
+                "Leadership",
+                "Apollo GraphQL",
                 "Big Data",
-                "MapReduce",
-                "Project Management",
-                "Data Privacy",
-                "Apache Pig",
-                "Rust (Programming Language)",
-                "HTML5",
-                "HBase",
-                "Teamwork",
-                "SQL Server",
-                "Web Services",
+                "UI/UX Design",
+                "ITIL",
+                "Team Leadership",
                 "J2EE",
+                "Agile Project Management",
                 "Software Infrastructure",
-                "ITIL"
+                "Data Privacy",
+                "Teamwork",
+                "Enterprise Architecture",
+                "HBase",
+                "MapReduce",
+                "Front-End Development",
+                "Solution Architecture",
+                "Apache Pig",
+                "IT Strategy",
+                "Project Management",
+                "SQL Server",
+                "Program Management",
+                "Software Project Management",
+                "E-commerce",
+                "Software Development",
+                "Rust",
+                "PCI DSS",
+                "C++"
             ]
         },
         {
             "name": "interests",
-            "description": "The interests of the consultant",
+            "description": "The personal interests or areas of focus of the consultant",
             "list_of_values": [
-                "Charity work",
-                "Big Data solutions",
-                "Training",
-                "Data Management",
                 "Artificial Intelligence",
-                "Meditation",
-                "Community Support",
-                "Open Source solutions",
-                "Mentoring",
-                "Exploring AI Technologies"
+                "Big Data solutions",
+                "Client Value Delivery",
+                "Open Source Solutions",
+                "Training and Talent Acquisition"
             ]
         },
         {
-            "name": "languages",
-            "description": "The languages spoken by the consultant",
+            "name": "linkedin profile",
+            "description": "The URL to the consultant's LinkedIn profile",
             "list_of_values": [
-                "English",
-                "Portuguese",
-                "Spanish"
+                "https://www.linkedin.com/in/sangeethaviswanathan",
+                "https://www.linkedin.com/in/suresh-sharma-60336159",
+                "https://www.linkedin.com/in/alexander-polev-cto",
+                "https://www.linkedin.com/in/jakeraeburn",
+                "https://www.linkedin.com/in/allanschweitz",
+                "https://www.linkedin.com/in/shashinbshah",
+                "https://www.linkedin.com/in/murtaza-hassani",
+                "https://www.linkedin.com/in/louisa-ekanem",
+                "https://www.linkedin.com/in/maithilishetty",
+                "https://www.linkedin.com/in/ablessy",
+                "https://www.linkedin.com/in/darren-miller-1035743",
+                "https://www.linkedin.com/in/elza-braeken-330ba31a6",
+                "https://www.linkedin.com/in/gil-palma-fernandes",
+                "https://www.linkedin.com/in/miguelvale",
+                "https://www.linkedin.com/in/rita-rajabally-96135629"
             ]
         },
         {
-            "name": "certifications",
-            "description": "The certifications held by the consultant",
+            "name": "contact information",
+            "description": "The contact details of the consultant",
             "list_of_values": [
-                "CSM",
-                "DSDM",
-                "PRINCE 2"
+                "shashinbshah@linkedin.com",
+                "murtaza-hassani@linkedin.com",
+                "maithilishetty@linkedin.com",
+                "louisa-ekanem@linkedin.com",
+                "darren-miller-1035743@linkedin.com"
             ]
         }
     ]

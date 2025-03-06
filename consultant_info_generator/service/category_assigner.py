@@ -45,7 +45,7 @@ async def assign_categories_to_profiles(
             for category in category_questions.category_questions:
                 input = _prepare_assignments(consultant.model_dump_json(), category)
                 category_assignment: CategoryAssignment = await chain.ainvoke(input)
-                
+
                 category_assignments.append(
                     ProfileCategoryAssignment(
                         profile=profile,

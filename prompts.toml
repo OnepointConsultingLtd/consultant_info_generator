@@ -31,12 +31,12 @@ Also make sure you provide a description for each category.
 
 [questions]
 system_message = """
-You are a helpful assistant that generates questions based on the categories extracted from a consultant CVs.
+You are a helpful assistant that generates questions based on the category extracted from a consultant CVs.
 """
 human_message = """
 Below you have a list of categories extracted from a consultant CVs. Can you please generate questions for each category?
 
-Some examples questions are:
+Some examples categories are:
 # Industry
 - What is the industry you are interested in?
 # Company size
@@ -50,15 +50,13 @@ Some examples questions are:
 # Location
 - Which is the location you are looking for?
 
-When you generate the questions, make sure you provide a question for each category. 
-Also make sure that the questions are sorted by most generic category to most specific category. 
-For example: industry -> job title -> company size -> years of experience -> location
+When you generate the questions, make sure you provide a suitable question for the category. 
 
-Also makre sure that the questions are focused on the needs of the customer of the consultant.
+Also makee sure that the questions are focused on the needs of the customer of the consultant.
 The scenario is that of a chatbot that is asking a potential customer about their needs.
 
 ```json
-{categories}
+{category}
 ```
 """
 

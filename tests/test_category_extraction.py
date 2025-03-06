@@ -1,7 +1,9 @@
 import pytest
 import json
+from pathlib import Path
+
 from consultant_info_generator.model.category import Categories
-from consultant_info_generator.service.dimension_extraction import (
+from consultant_info_generator.service.category_extraction import (
     extract_dimensions,
     extract_from_profiles,
 )
@@ -44,11 +46,12 @@ async def test_extract_from_profiles():
         "shashinbshah",
         "murtaza-hassani",
         "maithilishetty",
-        "louisa-ekanem",#
-        "darren-miller-1035743"
+        "louisa-ekanem",  #
+        "darren-miller-1035743",
     ]
-    result = await extract_from_profiles(test_profiles)
-    assert isinstance(result, Categories)
-    with open("test_dimensions.json", "w") as f:
-        json.dump(result.model_dump(), f)
-    assert len(result.dimensions) > 0
+    categories = await extract_from_profiles(test_profiles)
+    assert isinstance(categories, Categories)
+    categories_path = Path(__file__).parent / ".." / "data" / "categories.json"
+    with open(categories_path, "w") as f:
+        json.dump(categories.model_dump(), f)
+    assert len(categories.categories) > 0

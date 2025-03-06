@@ -8,6 +8,6 @@ class Category(BaseModel):
 
 
 class Categories(BaseModel):
-    dimensions: list[Category] = Field(
+    categories: list[Category] = Field(
         description="The categories associated to the consultant"
     )
