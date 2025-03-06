@@ -74,7 +74,7 @@ class Config:
             selected_llm = openai_llm
         case _:
             raise ValueError(f"Invalid LLM: {preferred_llm_param}")
-        
+
 
 class DBConfig:
     db_name = os.getenv("DB_NAME")
@@ -88,7 +88,7 @@ class DBConfig:
     db_password = os.getenv("DB_PASSWORD")
     assert db_password is not None, "The database password cannot be empty."
     db_create = os.getenv("DB_CREATE")
-    db_connection_string = f"dbname={db_name} user={db_user} password={db_password} host={db_host} port={db_port}"
+    db_conn_str = f"dbname={db_name} user={db_user} password={db_password} host={db_host} port={db_port}"
 
 
 cfg = Config()
