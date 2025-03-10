@@ -19,3 +19,7 @@ uv sync
 You will need a Postgres database which you can setup using the script: [db_creation.sql](./sql/db_creation.sql)
 
 Then you can install all of the tables by running this script  [db_setup.sql](./sql/db_setup.sql)
+
+## Environment
+
+You will need the environment variables listed in [.env_local](.env_local) in order to run the main customer import.
