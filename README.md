@@ -2,7 +2,7 @@
 
 The purpose of this project is to extract information from webpages and generate the data needed for consultant profile creation.
 
-## Installation
+# Installation
 
 ## Setup
 
@@ -13,3 +13,9 @@ uv venv
 ./.venv/Scripts/activate
 uv sync
 ```
+
+## Database
+
+You will need a Postgres database which you can setup using the script: [db_creation.sql](./sql/db_creation.sql)
+
+Then you can install all of the tables by running this script  [db_setup.sql](./sql/db_setup.sql)
