@@ -11,7 +11,10 @@ from consultant_info_generator.service.persistence_service_consultants_async imp
     delete_profile_category_assignment,
 )
 from tests.provider.category_provider import create_dummy_category
-from tests.provider.consultant_category_item_assignment_provider import create_profile_category_assignment
+from tests.provider.consultant_category_item_assignment_provider import (
+    create_profile_category_assignment,
+)
+
 
 @pytest.mark.asyncio
 async def test_save_consultant():

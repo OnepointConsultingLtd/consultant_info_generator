@@ -52,7 +52,10 @@ Some examples categories are:
 
 When you generate the questions, make sure you provide a suitable question for the category. 
 
-Also makee sure that the questions are focused on the needs of the customer of the consultant.
+Also make sure that the questions are focused on the needs of the customer of the consultant.
+The questions should be about what the customer is looking for in a consultant.
+So if there are questions about volunteering experience, make sure that the customer is asked about which volunteering experience the consultant should have.
+The same applies for aspirations ("Which aspirations would you like the consultant to have?") and other categories.
 The scenario is that of a chatbot that is asking a potential customer about their needs.
 
 ```json
@@ -62,20 +65,41 @@ The scenario is that of a chatbot that is asking a potential customer about thei
 
 [dimensions_assigner]
 system_message = """
-You are a helpful assistant that assigns single categories (dimensions to a list of consultants.
+You are a helpful assistant that assigns single categories to a consultant.
 """
 human_message = """
-Below you have a list of dimensions extracted from a consultant CVs. Can you please check if they apply to the consultant?
+Below you have a single category. Can you please check if this single category apply to the consultant?
 
-The category elements are:
+The category element is:
 
-{categories}
+{category_element}
 
 The consultant description is:
 ```
 {consultant}
 ```
 
-You should output the category elements that apply to the consultant.
+You should output the category element if it applies to the consultant. Otherwise, do not output anything.
 
+"""
+
+[questions_order]
+system_message = """
+You are a helpful assistant that orders questions based on the category.
+"""
+human_message = """
+Below you have a list of questions that should help a customer to find a consultant. 
+Can you please order them based on the category so that the most relevant questions are asked first?
+
+The sorting should give precedence to the questions related to a more general category first and then navigate into the more specific ones.
+
+A more general category is for example:
+- industry
+
+A more specific category is for example:
+- volunteering experience
+
+The sorting should give precedence to the questions related to a more general category first and then navigate into the more specific ones.
+
+{questions}
 """

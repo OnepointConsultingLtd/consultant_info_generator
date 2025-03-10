@@ -31,15 +31,15 @@ def extract_consultant(profile: str) -> Consultant:
     skills: list[Skill] = []
     experiences: list[Experience] = []
     cv = profile_data.get("summary", "")
-    given_name = profile_data["firstName"]
-    surname = profile_data["lastName"]
+    given_name = profile_data.get("firstName", "Unknown")
+    surname = profile_data.get("lastName", "Unknown")
     email = f"{profile}@linkedin.com"
     industry_name: str = profile_data.get("industryName", "")
     geo_location: str = profile_data.get("geoLocationName", "")
     linkedin_profile_url = f"https://www.linkedin.com/in/{profile}"
-    for experience in profile_data["experience"]:
+    for experience in profile_data.get("experience", []):
         add_experience(experiences, experience)
-    for skill in profile_data["skills"]:
+    for skill in profile_data.get("skills", []):
         if "name" in skill:
             skills.append(Skill(name=skill["name"]))
     return Consultant(

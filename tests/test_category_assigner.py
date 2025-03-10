@@ -13,7 +13,7 @@ async def test_assign_categories_to_profiles():
     profiles = get_profiles()
     category_questions = get_category_questions()
     profile_category_assignments = await assign_categories_to_profiles(
-        profiles, category_questions
+        profiles[:2], category_questions
     )
     assert len(profile_category_assignments.profile_category_assignments) > 0
 

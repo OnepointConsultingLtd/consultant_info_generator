@@ -1,3 +1,5 @@
+import logging
+
 from consultant_info_generator.model.model import (
     Company,
     Consultant,
@@ -13,6 +15,7 @@ from psycopg import AsyncCursor
 
 from consultant_info_generator.service.query_support import create_cursor, select_from
 
+logger = logging.getLogger(__name__)
 
 async def __process_simple_operation(sql: str, skill: str) -> int:
     async def process(cur: AsyncCursor):
@@ -261,8 +264,8 @@ async def save_category_question(question: CategoryQuestion) -> int | None:
     async def process(cur: AsyncCursor):
         await save_category(question)
         sql = """
-INSERT INTO TB_CATEGORY_QUESTION(CATEGORY_ID, QUESTION) VALUES(%(category_id)s, %(question)s)
-ON CONFLICT ((SELECT ID FROM TB_CATEGORY WHERE NAME = %(category_name)s), %(question)s) DO NOTHING RETURNING ID;
+INSERT INTO TB_CATEGORY_QUESTION(CATEGORY_ID, QUESTION) VALUES((SELECT ID FROM TB_CATEGORY WHERE NAME = %(category_name)s), %(question)s)
+RETURNING ID;
 """
         await cur.execute(
             sql, {"category_name": question.name, "question": question.question}
@@ -288,16 +291,31 @@ DELETE FROM TB_CATEGORY_QUESTION WHERE CATEGORY_ID = (SELECT ID FROM TB_CATEGORY
     return await create_cursor(process, True)
 
 
-
 async def save_profile_category_assignment(
     assignment: ProfileCategoryAssignment,
 ) -> int | None:
     async def process(cur: AsyncCursor):
+        item_sql = """
+SELECT ID FROM TB_CATEGORY_ITEM WHERE CATEGORY_ID = (SELECT ID FROM TB_CATEGORY WHERE LOWER(NAME) = LOWER(%(category_name)s)) AND LOWER(ITEM) = LOWER(%(category_element)s)
+"""
+        rows = await select_from(item_sql, {"category_name": assignment.category_name, "category_element": assignment.category_element})
+        if rows is None or len(rows) == 0:
+            logger.error(f"Category item not found: {assignment.category_name} {assignment.category_element}")
+            simplefied_item_sql = """
+SELECT ID FROM TB_CATEGORY_ITEM WHERE LOWER(ITEM) = LOWER(%(category_element)s)
+"""
+            rows = await select_from(simplefied_item_sql, {"category_element": assignment.category_element})
+            if rows is None or len(rows) != 1:
+                logger.error(f"Category item not found again: for {assignment.category_element}")
+                return None
+            category_item_id = rows[0][0]
+        else:
+            category_item_id = rows[0][0]
         sql = """
 INSERT INTO TB_CONSULTANT_CATEGORY_ITEM_ASSIGNMENT(CONSULTANT_ID, CATEGORY_ITEM_ID, REASON) 
 VALUES(
     (select id from tb_consultant where linkedin_profile_url = %(profile_url)s), 
-    (SELECT ID FROM TB_CATEGORY_ITEM WHERE CATEGORY_ID = (SELECT ID FROM TB_CATEGORY WHERE NAME = %(category_name)s) AND ITEM = %(category_element)s),
+    %(category_item_id)s,
     %(reason)s
 )
 ON CONFLICT (CONSULTANT_ID, CATEGORY_ITEM_ID) DO NOTHING RETURNING ID;
@@ -311,7 +329,7 @@ ON CONFLICT (CONSULTANT_ID, CATEGORY_ITEM_ID) DO NOTHING RETURNING ID;
                     else assignment.profile
                 ),
                 "category_name": assignment.category_name,
-                "category_element": assignment.category_element,
+                "category_item_id": category_item_id,
                 "reason": assignment.reason,
             },
         )
@@ -328,7 +346,7 @@ async def delete_profile_category_assignment(
         sql = """
 DELETE FROM TB_CONSULTANT_CATEGORY_ITEM_ASSIGNMENT 
 WHERE CONSULTANT_ID = (SELECT ID FROM TB_CONSULTANT WHERE LINKEDIN_PROFILE_URL = %(profile_url)s) 
-AND CATEGORY_ITEM_ID = (SELECT ID FROM TB_CATEGORY_ITEM WHERE CATEGORY_ID = (SELECT ID FROM TB_CATEGORY WHERE NAME = %(category_name)s) AND ITEM = %(category_element)s)
+AND CATEGORY_ITEM_ID = (SELECT ID FROM TB_CATEGORY_ITEM WHERE CATEGORY_ID = (SELECT ID FROM TB_CATEGORY WHERE LOWER(NAME) = LOWER(%(category_name)s)) AND LOWER(ITEM) = LOWER(%(category_element)s))
 """
         await cur.execute(
             sql,

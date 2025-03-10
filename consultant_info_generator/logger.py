@@ -13,15 +13,19 @@ default_config = {
         "console": {
             "class": "logging.StreamHandler",
             "formatter": "default",
-            "level": "WARNING",
+            "level": "INFO",
             "stream": "ext://sys.stderr",
         }
     },
     "root": {
         "handlers": ["console"],
-        "level": "WARNING",
+        "level": "INFO",
     },
 }
 logging.config.dictConfig(default_config)
 
-logger = logging.getLogger("pdf_to_markdown")
+logger = logging.getLogger("consultant_info_generator")
+
+if __name__ == "__main__":
+    logger.warning("Hello, world!")
+    logger.info("Hello, world!")

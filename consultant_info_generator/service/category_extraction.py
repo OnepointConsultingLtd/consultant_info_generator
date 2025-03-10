@@ -58,6 +58,7 @@ async def extract_from_profiles(linkedin_profiles: list[str]) -> Categories:
     for profile in linkedin_profiles:
         try:
             consultant = extract_consultant(profile)
+            logger.info(f"Extracted consultant from {profile}")
             cvs.append(consultant.model_dump_json())
         except Exception as e:
             logger.error(f"Error extracting consultant from {profile}: {e}")

@@ -3,11 +3,10 @@ from langchain_core.runnables import RunnableSequence
 from consultant_info_generator.service.prompt_factory import prompt_factory
 from consultant_info_generator.config import cfg
 from consultant_info_generator.model.category_assignments import (
-    CategoryAssignment,
+    CategoryAssignmentMatch,
     ProfileCategoryAssignments,
     ProfileCategoryAssignment,
 )
-from consultant_info_generator.model.category import Category
 from consultant_info_generator.model.questions import CategoryQuestions
 from consultant_info_generator.consultant_info_tools import extract_consultant
 from consultant_info_generator.logger import logger
@@ -20,15 +19,15 @@ def prompt_factory_dimensions_assigner() -> PromptTemplate:
 
 def _chain_factory() -> RunnableSequence:
     """Create a chain of functions to extract dimensions from a text"""
-    model = cfg.selected_llm.with_structured_output(CategoryAssignment)
+    model = cfg.selected_llm.with_structured_output(CategoryAssignmentMatch)
     prompt = prompt_factory_dimensions_assigner()
     return prompt | model
 
 
-def _prepare_assignments(consultant: str, category: Category) -> dict[str, str]:
+def _prepare_assignments(consultant: str, category_element: str) -> dict[str, str]:
     """Prepare the assignments for the chain"""
     return {
-        "categories": "\n".join([f"- {v}" for v in category.list_of_values]),
+        "category_element": category_element,
         "consultant": consultant,
     }
 
@@ -39,21 +38,30 @@ async def assign_categories_to_profiles(
     chain = _chain_factory()
     category_assignments = []
     for profile in profiles:
-        logger.info(f"Processing profile: {profile}")
+        logger.info(f"Processing profile to assign categories: {profile}")
         try:
             consultant = extract_consultant(profile)
+            consultant_json = consultant.model_dump_json()
             for category in category_questions.category_questions:
-                input = _prepare_assignments(consultant.model_dump_json(), category)
-                category_assignment: CategoryAssignment = await chain.ainvoke(input)
-
-                category_assignments.append(
-                    ProfileCategoryAssignment(
-                        profile=profile,
-                        category_name=category.name,
-                        category_element=category_assignment.category_element,
-                        reason=category_assignment.reason,
-                    )
-                )
+                batch_size = 10
+                for i in range(0, len(category.list_of_values), batch_size):
+                    category_assignment_inputs = []
+                    category_elements = []
+                    for category_element in category.list_of_values[i:i+batch_size]:
+                        input = _prepare_assignments(consultant_json, category_element)
+                        category_assignment_inputs.append(input)
+                        category_elements.append(category_element)
+                    batch: list[CategoryAssignmentMatch] = await chain.abatch(category_assignment_inputs)
+                    for b, category_element in zip(batch, category_elements):
+                        if b.match:
+                            category_assignments.append(
+                                ProfileCategoryAssignment(
+                                    profile=profile,
+                                    category_name=category.name,
+                                    category_element=category_element,
+                                    reason=b.reason,
+                                )
+                            )
         except Exception as e:
             logger.error(f"Error assigning category to profile {profile}: {e}")
     return ProfileCategoryAssignments(profile_category_assignments=category_assignments)
