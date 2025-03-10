@@ -23,3 +23,14 @@ Then you can install all of the tables by running this script  [db_setup.sql](./
 ## Environment
 
 You will need the environment variables listed in [.env_local](.env_local) in order to run the main customer import.
+
+# Running import
+
+In order to run the main import you will need to collect some LinkedIn public profiles like the one you can find in [profiles.txt](./data/profiles.txt).
+
+The you can turn on the Python environment using venv for example and run this command pointing to a file with LinkedIn profiles:
+
+```python
+python consultant_info_generator/cli/main.py import-consultants-with-categories-file -f data/profiles.txt --remove-existing
+```
+
