@@ -1,6 +1,6 @@
 import asyncio
 import sys
-from typing import Any, Callable, Coroutine
+from typing import Any, Awaitable, Coroutine
 
 from psycopg import AsyncConnection, AsyncCursor
 
@@ -15,7 +15,7 @@ async def create_connection(conninfo: str = db_cfg.db_conn_str) -> AsyncConnecti
     return await AsyncConnection.connect(conninfo)
 
 
-async def create_cursor(func: Callable, commit=False, conn_info: str = None) -> Any:
+async def create_cursor(func: Awaitable, commit=False, conn_info: str = None) -> Any:
     try:
         conn = (
             (await create_connection())

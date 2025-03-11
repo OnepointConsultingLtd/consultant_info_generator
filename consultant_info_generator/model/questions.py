@@ -19,3 +19,16 @@ class CategoryQuestions(BaseModel):
     category_questions: list[CategoryQuestion] = Field(
         description="The category questions"
     )
+
+
+class QuestionOrdinal(BaseModel):
+    question: str = Field(description="The question")
+    ordinal: int = Field(
+        description="The ordinal according to which the questions should be ordered"
+    )
+
+
+class QuestionOrdinals(BaseModel):
+    question_ordinals: list[QuestionOrdinal] = Field(
+        description="The question ordinals"
+    )

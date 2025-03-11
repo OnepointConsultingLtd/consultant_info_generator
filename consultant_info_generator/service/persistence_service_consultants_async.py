@@ -7,7 +7,7 @@ from consultant_info_generator.model.model import (
     Skill,
 )
 from consultant_info_generator.model.category import Category
-from consultant_info_generator.model.questions import CategoryQuestion
+from consultant_info_generator.model.questions import CategoryQuestion, QuestionOrdinal
 from consultant_info_generator.model.category_assignments import (
     ProfileCategoryAssignment,
 )
@@ -16,6 +16,7 @@ from psycopg import AsyncCursor
 from consultant_info_generator.service.query_support import create_cursor, select_from
 
 logger = logging.getLogger(__name__)
+
 
 async def __process_simple_operation(sql: str, skill: str) -> int:
     async def process(cur: AsyncCursor):
@@ -276,6 +277,33 @@ RETURNING ID;
     return await create_cursor(process, True)
 
 
+async def read_session_questions() -> list[CategoryQuestion]:
+    async def process(cur: AsyncCursor):
+        sql = """
+SELECT Q.QUESTION, C.NAME, C.DESCRIPTION FROM TB_CATEGORY_QUESTION Q INNER JOIN TB_CATEGORY C ON Q.CATEGORY_ID = C.ID
+"""
+        await cur.execute(sql)
+        res = await cur.fetchall()
+        return [
+            CategoryQuestion(
+                question=r[0], name=r[1], description=r[2], list_of_values=[]
+            )
+            for r in res
+        ]
+
+    return await create_cursor(process, True)
+
+
+async def save_question_ordinal(question_ordinal: QuestionOrdinal) -> int | None:
+    async def process(cur: AsyncCursor):
+        sql = """
+UPDATE TB_CATEGORY_QUESTION SET ORDER_INDEX = %(ordinal)s WHERE QUESTION = %(question)s
+"""
+        res = await cur.execute(sql, {"question": question_ordinal.question, "ordinal": question_ordinal.ordinal})
+        return res.rowcount
+    return await create_cursor(process, True)
+
+
 async def delete_category_question(question: CategoryQuestion) -> int:
     async def process(cur: AsyncCursor):
         sql = """
@@ -298,15 +326,27 @@ async def save_profile_category_assignment(
         item_sql = """
 SELECT ID FROM TB_CATEGORY_ITEM WHERE CATEGORY_ID = (SELECT ID FROM TB_CATEGORY WHERE LOWER(NAME) = LOWER(%(category_name)s)) AND LOWER(ITEM) = LOWER(%(category_element)s)
 """
-        rows = await select_from(item_sql, {"category_name": assignment.category_name, "category_element": assignment.category_element})
+        rows = await select_from(
+            item_sql,
+            {
+                "category_name": assignment.category_name,
+                "category_element": assignment.category_element,
+            },
+        )
         if rows is None or len(rows) == 0:
-            logger.error(f"Category item not found: {assignment.category_name} {assignment.category_element}")
+            logger.error(
+                f"Category item not found: {assignment.category_name} {assignment.category_element}"
+            )
             simplefied_item_sql = """
 SELECT ID FROM TB_CATEGORY_ITEM WHERE LOWER(ITEM) = LOWER(%(category_element)s)
 """
-            rows = await select_from(simplefied_item_sql, {"category_element": assignment.category_element})
+            rows = await select_from(
+                simplefied_item_sql, {"category_element": assignment.category_element}
+            )
             if rows is None or len(rows) != 1:
-                logger.error(f"Category item not found again: for {assignment.category_element}")
+                logger.error(
+                    f"Category item not found again: for {assignment.category_element}"
+                )
                 return None
             category_item_id = rows[0][0]
         else:

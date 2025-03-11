@@ -10,8 +10,9 @@ from consultant_info_generator.service.persistence_service_consultants_async imp
     save_category_question,
     save_profile_category_assignment,
     delete_category_question,
-    delete_profile_category_assignment
+    delete_profile_category_assignment,
 )
+from consultant_info_generator.service.question_order import order_questions_and_save
 from consultant_info_generator.logger import logger
 
 
@@ -61,11 +62,15 @@ def import_consultants_with_categories_file(file: str, remove_existing: bool):
 
 async def aimport_consultants_with_categories(profile_ids: str, remove_existing: bool):
     profile_ids = profile_ids.split(",")
-    logger.info(f"Importing consultants with categories for {len(profile_ids)} profiles")
+    logger.info(
+        f"Importing consultants with categories for {len(profile_ids)} profiles"
+    )
     imported = await import_consultants(profile_ids, remove_existing)
     logger.info(f"Imported {len(imported)} consultants")
-    category_questions, profile_category_assignments = await prepare_consultant_chat(profile_ids)
-    
+    category_questions, profile_category_assignments = await prepare_consultant_chat(
+        profile_ids
+    )
+
     for category_question in category_questions.category_questions:
         if remove_existing:
             await delete_category_question(category_question)
@@ -76,6 +81,8 @@ async def aimport_consultants_with_categories(profile_ids: str, remove_existing:
         if remove_existing:
             await delete_profile_category_assignment(profile_category_assignment)
         await save_profile_category_assignment(profile_category_assignment)
+
+    await order_questions_and_save()
 
 
 if __name__ == "__main__":

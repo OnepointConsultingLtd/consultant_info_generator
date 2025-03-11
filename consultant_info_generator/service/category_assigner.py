@@ -47,11 +47,13 @@ async def assign_categories_to_profiles(
                 for i in range(0, len(category.list_of_values), batch_size):
                     category_assignment_inputs = []
                     category_elements = []
-                    for category_element in category.list_of_values[i:i+batch_size]:
+                    for category_element in category.list_of_values[i : i + batch_size]:
                         input = _prepare_assignments(consultant_json, category_element)
                         category_assignment_inputs.append(input)
                         category_elements.append(category_element)
-                    batch: list[CategoryAssignmentMatch] = await chain.abatch(category_assignment_inputs)
+                    batch: list[CategoryAssignmentMatch] = await chain.abatch(
+                        category_assignment_inputs
+                    )
                     for b, category_element in zip(batch, category_elements):
                         if b.match:
                             category_assignments.append(

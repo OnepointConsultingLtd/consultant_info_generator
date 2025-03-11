@@ -17,5 +17,5 @@ def get_profiles() -> list[str]:
         "louisa-ekanem",  #
         "darren-miller-1035743",
         "bradley-s-mccallion",
-        "carloseruiz"
+        "carloseruiz",
     ]

@@ -14,7 +14,9 @@ class CategoryAssignment(BaseModel):
 class CategoryAssignmentMatch(BaseModel):
     """A category assignment match"""
 
-    match: bool = Field(description="Whether the category element matches the consultant or not")
+    match: bool = Field(
+        description="Whether the category element matches the consultant or not"
+    )
     reason: str = Field(
         description="The reason for the assignment, why the category was assigned to the consultant"
     )
