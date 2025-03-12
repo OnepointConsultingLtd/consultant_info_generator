@@ -25,7 +25,9 @@ def _chain_factory() -> RunnableSequence:
 
 def _prepare_questions(category: Category) -> dict[str, str]:
     """Prepare the categories for the chain"""
-    return {"category": category.model_dump_json()}
+    return {"category_name": category.name, 
+            "category_description": category.description, 
+            "category_list_of_values": "\n".join(category.list_of_values)}
 
 
 async def generate_questions(categories: Categories) -> CategoryQuestions:

@@ -2,9 +2,9 @@ from pydantic import BaseModel, Field
 
 
 class Category(BaseModel):
-    name: str = Field(description="The name of the category")
-    description: str = Field(description="The description of the category")
-    list_of_values: list[str] = Field(description="The list of values for the category")
+    name: str = Field(description="The name of the dimension or category")
+    description: str = Field(description="The description of the dimension or category")
+    list_of_values: list[str] = Field(description="The list of values for the dimension or category")
 
 
 class Categories(BaseModel):
