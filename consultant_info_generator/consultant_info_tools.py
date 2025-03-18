@@ -30,6 +30,13 @@ def extract_consultant(profile: str) -> Consultant:
     companies: list[Company] = []
     skills: list[Skill] = []
     experiences: list[Experience] = []
+    photo_200: str | None = None
+    photo_400: str | None = None
+    if "displayPictureUrl" in profile_data:
+        if "img_200_200" in profile_data:
+            photo_200 = f"{profile_data["displayPictureUrl"]}{profile_data["img_200_200"]}"
+        if "img_400_400" in profile_data:
+            photo_400 = f"{profile_data["displayPictureUrl"]}{profile_data["img_400_400"]}"
     cv = profile_data.get("summary", "")
     given_name = profile_data.get("firstName", "Unknown")
     surname = profile_data.get("lastName", "Unknown")
@@ -52,6 +59,8 @@ def extract_consultant(profile: str) -> Consultant:
         linkedin_profile_url=linkedin_profile_url,
         experiences=experiences,
         skills=skills,
+        photo_200=photo_200,
+        photo_400=photo_400,
     )
 
 

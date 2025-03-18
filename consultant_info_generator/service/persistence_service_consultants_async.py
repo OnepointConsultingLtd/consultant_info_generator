@@ -43,10 +43,10 @@ DELETE FROM TB_SKILL WHERE SKILL_NAME = %(skill)s
 async def save_consultant(consultant: Consultant) -> int | None:
     async def process(cur: AsyncCursor):
         sql = """
-INSERT INTO TB_CONSULTANT(GIVEN_NAME, SURNAME, EMAIL, CV, INDUSTRY_NAME, GEO_LOCATION, LINKEDIN_PROFILE_URL)
-VALUES(%(given_name)s, %(surname)s, %(email)s, %(cv)s, %(industry_name)s, %(location)s, %(linkedin_profile_url)s)
+INSERT INTO TB_CONSULTANT(GIVEN_NAME, SURNAME, EMAIL, CV, INDUSTRY_NAME, GEO_LOCATION, LINKEDIN_PROFILE_URL, LINKEDIN_PHOTO_200, LINKEDIN_PHOTO_400)
+VALUES(%(given_name)s, %(surname)s, %(email)s, %(cv)s, %(industry_name)s, %(location)s, %(linkedin_profile_url)s, %(photo_200)s, %(photo_400)s)
 ON CONFLICT (EMAIL) DO UPDATE SET GIVEN_NAME=%(given_name)s, SURNAME=%(surname)s, EMAIL=%(email)s, CV=%(cv)s, INDUSTRY_NAME=%(industry_name)s, 
-GEO_LOCATION=%(location)s, LINKEDIN_PROFILE_URL=%(linkedin_profile_url)s, UPDATED_AT=CURRENT_TIMESTAMP RETURNING ID;
+GEO_LOCATION=%(location)s, LINKEDIN_PROFILE_URL=%(linkedin_profile_url)s, LINKEDIN_PHOTO_200=%(photo_200)s, LINKEDIN_PHOTO_400=%(photo_400)s, UPDATED_AT=CURRENT_TIMESTAMP RETURNING ID;
 """
         await cur.execute(
             sql,
@@ -58,6 +58,8 @@ GEO_LOCATION=%(location)s, LINKEDIN_PROFILE_URL=%(linkedin_profile_url)s, UPDATE
                 "industry_name": consultant.industry_name,
                 "location": consultant.geo_location,
                 "linkedin_profile_url": consultant.linkedin_profile_url,
+                "photo_200": consultant.photo_200,
+                "photo_400": consultant.photo_400,
             },
         )
         rows = await cur.fetchone()
@@ -204,7 +206,7 @@ WHERE C.ID = %(consultant_id)s
 async def save_category(category: Category) -> int | None:
     async def process(cur: AsyncCursor):
         sql = """
-INSERT INTO TB_CATEGORY(NAME, DESCRIPTION) VALUES(%(name)s, %(description)s)
+INSERT INTO TB_CATEGORY(NAME, DESCRIPTION) VALUES(LOWER(%(name)s), %(description)s)
 ON CONFLICT (NAME) DO UPDATE SET DESCRIPTION=%(description)s RETURNING ID;
 """
         await cur.execute(
@@ -229,7 +231,7 @@ ON CONFLICT (CATEGORY_ID, ITEM) DO NOTHING
 async def delete_category(category: Category) -> int:
     async def process(cur: AsyncCursor):
         sql = """
-DELETE FROM TB_CATEGORY WHERE NAME=%(name)s"""
+DELETE FROM TB_CATEGORY WHERE NAME=LOWER(%(name)s)"""
         await cur.execute(sql, {"name": category.name})
         return cur.rowcount
 
@@ -265,7 +267,7 @@ async def save_category_question(question: CategoryQuestion) -> int | None:
     async def process(cur: AsyncCursor):
         await save_category(question)
         sql = """
-INSERT INTO TB_CATEGORY_QUESTION(CATEGORY_ID, QUESTION) VALUES((SELECT ID FROM TB_CATEGORY WHERE NAME = %(category_name)s), %(question)s)
+INSERT INTO TB_CATEGORY_QUESTION(CATEGORY_ID, QUESTION) VALUES((SELECT ID FROM TB_CATEGORY WHERE NAME = LOWER(%(category_name)s)), %(question)s)
 RETURNING ID;
 """
         await cur.execute(

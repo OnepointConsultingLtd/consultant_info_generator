@@ -49,3 +49,6 @@ class Consultant(BaseModel):
         ..., description="The experiences of this user"
     )
     skills: list[Skill] = Field(..., description="The list of skills")
+    photo_200: str | None = Field(default=None, description="The 200x200 photo of the consultant")
+    photo_400: str | None = Field(default=None, description="The 400x400 photo of the consultant")
+
