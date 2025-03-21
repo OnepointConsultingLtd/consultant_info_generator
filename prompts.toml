@@ -46,6 +46,50 @@ For example, if the category is "company size", the list of values could be:
 {cvs}
 """
 
+[dimension_option_deduplication]
+system_message = """
+You are a helpful assistant that deduplicates the list of values for a category.
+"""
+human_message = """
+Below you have a list of values for a category. Please deduplicate the list of values.
+The list of values can be found between === start category_name === and === end category_name ===. 
+The name of the category is: {category_name}
+The description of the category is: {category_description}
+
+The list of values is:
+=== start category_name ===
+{category_list_of_values}
+=== end category_name ===
+
+Here is an example on how to deduplicate the list of values:
+The name of the category is: location
+=== start category_name ===
+- Greater London, England
+- London Area, United Kingdom
+- London, England
+- London, England, United Kingdom
+=== end category_name ===
+
+All of these are the same location. So you should deduplicate them and output the following:
+=== start category_name ===
+- Greater London, England
+=== end category_name ===
+
+Here is another example:
+The name of the category is: job title
+=== start category_name ===
+- Software Engineer
+- Software Developer
+=== end category_name ===
+
+This is a very similar job title. You can output the following:
+=== start category_name ===
+- Software Engineer
+=== end category_name ===
+
+"""
+
+
 [questions]
 system_message = """
 You are a helpful assistant that generates questions based on the category extracted from a consultant CVs.
