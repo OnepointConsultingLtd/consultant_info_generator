@@ -88,6 +88,6 @@ async def aimport_consultants_with_categories(profile_ids: str, remove_existing:
 if __name__ == "__main__":
     """
     This is the entry point for the CLI.
-    Usage: python consultant_info_generator\cli\main.py
+    Usage: python consultant_info_generator/cli/main.py
     """
     cli()

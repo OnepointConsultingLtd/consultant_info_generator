@@ -66,8 +66,8 @@ def extract_consultant(profile: str) -> Consultant:
 
 def add_experience(experiences, experience):
     location = experience.get("locationName", "")
-    time_period = experience["timePeriod"]
-    if time_period:
+    if "timePeriod" in experience:
+        time_period = experience["timePeriod"]
         if "startDate" in time_period:
             start_date = time_period["startDate"]
             start_date_month = int(start_date.get("month", "1"))
