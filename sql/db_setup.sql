@@ -191,7 +191,7 @@ CREATE TABLE PUBLIC.TB_CONFIGURATION (
 -- unique constraint on key
 CREATE UNIQUE INDEX unique_configuration_key ON PUBLIC.TB_CONFIGURATION (KEY);
 
-INSERT INTO PUBLIC.TB_CONFIGURATION (KEY, VALUE) VALUES ('candidate_threshold', '3');
+INSERT INTO PUBLIC.TB_CONFIGURATION (KEY, VALUE) VALUES ('candidate_threshold', '5');
 
 
 
