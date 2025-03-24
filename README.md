@@ -8,9 +8,15 @@ The purpose of this project is to extract information from webpages and generate
 
 We suggest to use [uv](https://github.com/astral-sh/uv) to manage the virtual environment and then install poetry.
 
-```
+```powershell
 uv venv
 ./.venv/Scripts/activate
+uv sync
+```
+
+```bash
+uv venv
+source .venv/bin/activate
 uv sync
 ```
 
