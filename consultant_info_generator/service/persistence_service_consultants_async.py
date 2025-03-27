@@ -43,8 +43,8 @@ DELETE FROM TB_SKILL WHERE SKILL_NAME = %(skill)s
 async def save_consultant(consultant: Consultant) -> int | None:
     async def process(cur: AsyncCursor):
         sql = """
-INSERT INTO TB_CONSULTANT(GIVEN_NAME, SURNAME, EMAIL, CV, INDUSTRY_NAME, GEO_LOCATION, LINKEDIN_PROFILE_URL, LINKEDIN_PHOTO_200, LINKEDIN_PHOTO_400)
-VALUES(%(given_name)s, %(surname)s, %(email)s, %(cv)s, %(industry_name)s, %(location)s, %(linkedin_profile_url)s, %(photo_200)s, %(photo_400)s)
+INSERT INTO TB_CONSULTANT(GIVEN_NAME, SURNAME, EMAIL, CV, CV_SUMMARY, INDUSTRY_NAME, GEO_LOCATION, LINKEDIN_PROFILE_URL, LINKEDIN_PHOTO_200, LINKEDIN_PHOTO_400)
+VALUES(%(given_name)s, %(surname)s, %(email)s, %(cv)s, %(cv_summary)s, %(industry_name)s, %(location)s, %(linkedin_profile_url)s, %(photo_200)s, %(photo_400)s)
 ON CONFLICT (EMAIL) DO UPDATE SET GIVEN_NAME=%(given_name)s, SURNAME=%(surname)s, EMAIL=%(email)s, CV=%(cv)s, INDUSTRY_NAME=%(industry_name)s, 
 GEO_LOCATION=%(location)s, LINKEDIN_PROFILE_URL=%(linkedin_profile_url)s, LINKEDIN_PHOTO_200=%(photo_200)s, LINKEDIN_PHOTO_400=%(photo_400)s, UPDATED_AT=CURRENT_TIMESTAMP RETURNING ID;
 """
@@ -55,6 +55,7 @@ GEO_LOCATION=%(location)s, LINKEDIN_PROFILE_URL=%(linkedin_profile_url)s, LINKED
                 "surname": consultant.surname,
                 "email": consultant.email,
                 "cv": consultant.cv,
+                "cv_summary": consultant.summary,
                 "industry_name": consultant.industry_name,
                 "location": consultant.geo_location,
                 "linkedin_profile_url": consultant.linkedin_profile_url,

@@ -1,6 +1,6 @@
 [dimensions]
 system_message = """
-You are a helpful assistant that extracts categories from a consultant CVs.
+You are a helpful assistant that extracts categories from consultant CVs.
 """
 human_message = """
 Below you have a list of CVs about consultants. Please extract the main dimensions for categorization from these CVs.
@@ -42,9 +42,19 @@ For example, if the category is "company size", the list of values could be:
 - 501-1000 employees
 - More than 1000 employees
 
-
 {cvs}
 """
+
+[cv_summary]
+system_message = """
+You are a helpful assistant that summarizes a single consultant CV.
+"""
+human_message = """
+Below you have a consultant CV. Please summarize the CV in around 100 words.
+
+{cv}
+"""
+
 
 [dimension_option_deduplication]
 system_message = """
@@ -94,7 +104,7 @@ Please make sure that you never retrieve more that 20 values per category.
 
 [questions]
 system_message = """
-You are a helpful assistant that generates questions based on the category extracted from a consultant CVs.
+You are a helpful assistant that generates questions based on the category extracted from consultant CVs.
 """
 human_message = """
 Below you have a list of categories extracted from a consultant CVs. Can you please generate questions for each category?

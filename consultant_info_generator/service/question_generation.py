@@ -4,7 +4,6 @@ from consultant_info_generator.config import cfg
 from consultant_info_generator.service.prompt_factory import prompt_factory
 from consultant_info_generator.model.questions import (
     Question,
-    Questions,
     CategoryQuestion,
     CategoryQuestions,
 )

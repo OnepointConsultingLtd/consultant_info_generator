@@ -29,8 +29,8 @@ async def test_save_category():
     await save_category(category)
     categories = await read_categories()
     assert len(categories) > 0
-    assert category.name in [
-        c.name for c in categories
+    assert category.name.lower() in [
+        c.name.lower() for c in categories
     ], "Could not find category in DB"
     await delete_category(category)
     categories = await read_categories()

@@ -31,6 +31,14 @@ class Experience(BaseModel):
     company: Company = Field(
         ..., description="The company in which the consultant worked"
     )
+    def __str__(self) -> str:
+        return f"""Company: {self.title}
+Location: {self.location}
+Company: {self.company.name if self.company.name else "No company found"} ({", ".join([industry.name for industry in self.company.industries]) if self.company.industries else "No industries found"})
+Start: {self.start}
+End: {self.end}
+
+"""
 
 
 class Consultant(BaseModel):
@@ -38,6 +46,7 @@ class Consultant(BaseModel):
     surname: str = Field(..., description="The surname of the consultant")
     email: str = Field(..., description="The email of the consultant")
     cv: str = Field(..., description="The curriculum vitae of the consultant")
+    summary: str = Field(default="", description="The summary of the consultant")
     industry_name: str = Field(
         ..., description="The industry in which the consultant is working"
     )
@@ -51,4 +60,20 @@ class Consultant(BaseModel):
     skills: list[Skill] = Field(..., description="The list of skills")
     photo_200: str | None = Field(default=None, description="The 200x200 photo of the consultant")
     photo_400: str | None = Field(default=None, description="The 400x400 photo of the consultant")
+
+    def __str__(self) -> str:
+        return f"""{self.given_name} {self.surname}
+Email: {self.email}
+Industry: {self.industry_name}
+Location: {self.geo_location}
+LinkedIn: {self.linkedin_profile_url}
+
+{self.cv}
+
+Skills:
+{"\n- ".join([skill.name for skill in self.skills]) if self.skills else "No skills found"}
+
+Experiences:
+{"\n- ".join([str(experience) for experience in self.experiences]) if self.experiences else "No experiences found"}
+"""
 
