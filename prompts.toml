@@ -87,6 +87,8 @@ This is a very similar job title. You can output the following:
 - Software Engineer
 === end category_name ===
 
+Please make sure that you never retrieve more that 20 values per category.
+
 """
 
 
