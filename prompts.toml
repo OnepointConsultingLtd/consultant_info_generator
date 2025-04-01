@@ -42,6 +42,15 @@ For example, if the category is "company size", the list of values could be:
 - 501-1000 employees
 - More than 1000 employees
 
+When you extract the list of values, make sure you do not use too specific values, like for example "Rust programming" or "React Native".
+In these cases you should use "Programming" or "Mobile Development" as a more general category.
+
+Make also sure that when you extract sizes, that the items you extract are indeed quantitative values and not concepts like "consulting firm"
+which is not a quantitative value.
+
+Also: when you extract a list of related years of experience, make sure that you are using years and not ranges from date to date.
+So it is ok to use 10 years+, but not to use 2010-2020.
+
 {cvs}
 """
 
@@ -95,6 +104,31 @@ The name of the category is: job title
 This is a very similar job title. You can output the following:
 === start category_name ===
 - Software Engineer
+=== end category_name ===
+
+Here is another example of how to deduplicate the list of values:
+The name of the category is: job title
+=== start category_name ===
+- Software Engineer
+- Software Developer
+- Software Engineer
+=== end category_name ===
+
+This is a very similar job title. You can output the following:
+=== start category_name ===
+- Software Engineer
+=== end category_name ===
+
+Here is the last example of how to deduplicate the list of values:
+The name of the category is: job title
+=== start category_name ===
+- CEO & Founder
+- Founder & CEO
+=== end category_name ===
+
+This is exactly the same job title just with a different order. You should output the following:
+=== start category_name ===
+- CEO & Founder
 === end category_name ===
 
 Please make sure that you never retrieve more that 20 values per category.
