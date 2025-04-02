@@ -40,3 +40,11 @@ The you can turn on the Python environment using venv for example and run this c
 python consultant_info_generator/cli/main.py import-consultants-with-categories-file -f data/profiles.txt --remove-existing
 ```
 
+## Workflow
+
+The workflow can be see in this picture:
+
+![Consultant Info Loader Workflow](./docs/consultant_info_loader.png)
+
+
+
