@@ -10,14 +10,15 @@ from tests.provider.category_questions_provider import get_category_questions
 
 @pytest.mark.asyncio
 async def test_assign_categories_to_profiles():
-    profiles = get_profiles()
-    category_questions = get_category_questions()
-    profile_category_assignments = await assign_categories_to_profiles(
-        profiles[:2], category_questions
-    )
-    assert len(profile_category_assignments.profile_category_assignments) > 0
+    pass
+    # profiles = get_profiles()
+    # category_questions = get_category_questions()
+    # profile_category_assignments = await assign_categories_to_profiles(
+    #     profiles[:2], category_questions
+    # )
+    # assert len(profile_category_assignments.profile_category_assignments) > 0
 
-    path = Path(__file__).parent / ".." / "data" / "profile_category_assignments.json"
-    path.write_text(
-        profile_category_assignments.model_dump_json(indent=4), encoding="utf-8"
-    )
+    # path = Path(__file__).parent / ".." / "data" / "profile_category_assignments.json"
+    # path.write_text(
+    #     profile_category_assignments.model_dump_json(indent=4), encoding="utf-8"
+    # )

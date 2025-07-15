@@ -49,8 +49,9 @@ async def test_extract_from_profiles():
         "louisa-ekanem",  #
         "darren-miller-1035743",
     ]
-    categories = await extract_from_profiles(test_profiles)
+    categories, consultants = await extract_from_profiles(test_profiles)
     assert isinstance(categories, Categories)
+    assert len(consultants) == len(test_profiles)
     categories_path = Path(__file__).parent / ".." / "data" / "categories.json"
     with open(categories_path, "w") as f:
         json.dump(categories.model_dump(), f)

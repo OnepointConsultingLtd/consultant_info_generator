@@ -1,0 +1,13 @@
+[entity-matching]
+system_prompt = """You are a helpful assistant that matches user interests to entities."""
+human_prompt = """Given the following interests of a user which you can find between the <user_interests> tags, please match them to the most likely entity from the list of entities between the <entities> tags.
+
+<user_interests>
+{user_interests}
+</user_interests>
+
+<entities>
+{entities}
+</entities>
+"""
+

@@ -8,17 +8,25 @@ from consultant_info_generator.service.category_assigner import (
     assign_categories_to_profiles,
 )
 from consultant_info_generator.logger import logger
-from consultant_info_generator.service.category_value_deduplication import deduplicate_categories
+from consultant_info_generator.service.category_value_deduplication import (
+    deduplicate_categories,
+)
+from consultant_info_generator.model.model import Consultant
+from consultant_info_generator.model.category import Categories
 
 
 async def prepare_consultant_chat(
     linkedin_profiles: list[str],
 ) -> tuple[CategoryQuestions, ProfileCategoryAssignments]:
-    categories = await extract_from_profiles(linkedin_profiles)
+    categories, consultants = await extract_from_profiles(linkedin_profiles)
+    return await prepare_category_questions_and_assignments(categories, consultants)
+
+
+async def prepare_category_questions_and_assignments(
+    categories: Categories, consultants: list[Consultant]
+) -> tuple[CategoryQuestions, ProfileCategoryAssignments]:
     # deduplicate
-    logger.info(
-        f"Deduplicating {len(categories.categories)} categories"
-    )
+    logger.info(f"Deduplicating {len(categories.categories)} categories")
     deduplicated_categories = await deduplicate_categories(categories)
 
     category_questions = await generate_questions(deduplicated_categories)
@@ -26,7 +34,7 @@ async def prepare_consultant_chat(
         f"Generated {len(category_questions.category_questions)} category questions"
     )
     profile_category_assignments = await assign_categories_to_profiles(
-        linkedin_profiles, category_questions
+        consultants, category_questions
     )
     logger.info(
         f"Assigned {len(profile_category_assignments.profile_category_assignments)} profile category assignments"

@@ -1,6 +1,8 @@
 import pytest
 from tests.provider.category_provider import create_dummy_category
-from consultant_info_generator.service.category_value_deduplication import deduplicate_dimension_option
+from consultant_info_generator.service.category_value_deduplication import (
+    deduplicate_dimension_option,
+)
 
 
 @pytest.mark.asyncio

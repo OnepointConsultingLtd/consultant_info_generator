@@ -10,6 +10,7 @@ from consultant_info_generator.model.category_assignments import (
 from consultant_info_generator.model.questions import CategoryQuestions
 from consultant_info_generator.consultant_info_tools import extract_consultant
 from consultant_info_generator.logger import logger
+from consultant_info_generator.model.model import Consultant
 
 
 def prompt_factory_dimensions_assigner() -> PromptTemplate:
@@ -33,14 +34,13 @@ def _prepare_assignments(consultant: str, category_element: str) -> dict[str, st
 
 
 async def assign_categories_to_profiles(
-    profiles: list[str], category_questions: CategoryQuestions
+    consultants: list[Consultant], category_questions: CategoryQuestions
 ) -> ProfileCategoryAssignments:
     chain = _chain_factory()
     category_assignments = []
-    for profile in profiles:
-        logger.info(f"Processing profile to assign categories: {profile}")
+    for consultant in consultants:
+        logger.info(f"Processing profile to assign categories: {consultant}")
         try:
-            consultant = extract_consultant(profile)
             consultant_json = consultant.model_dump_json()
             for category in category_questions.category_questions:
                 batch_size = 10
@@ -58,12 +58,14 @@ async def assign_categories_to_profiles(
                         if b.match:
                             category_assignments.append(
                                 ProfileCategoryAssignment(
-                                    profile=profile,
+                                    profile=consultant.linkedin_profile_url,
                                     category_name=category.name,
                                     category_element=category_element,
                                     reason=b.reason,
                                 )
                             )
         except Exception as e:
-            logger.error(f"Error assigning category to profile {profile}: {e}")
+            logger.error(
+                f"Error assigning category to profile {consultant.linkedin_profile_url}: {e}"
+            )
     return ProfileCategoryAssignments(profile_category_assignments=category_assignments)

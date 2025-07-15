@@ -13,7 +13,22 @@ from consultant_info_generator.service.persistence_service_consultants_async imp
     delete_profile_category_assignment,
 )
 from consultant_info_generator.service.question_order import order_questions_and_save
+from consultant_info_generator.service.footanstey.webpage_import import (
+    import_footanstey_consultants,
+    FOOTANSTEY_URL,
+)
 from consultant_info_generator.logger import logger
+from consultant_info_generator.service.category_extraction import (
+    flatten_dimensions,
+    extract_dimensions,
+)
+from consultant_info_generator.service.consultant_chat_preparation import (
+    prepare_category_questions_and_assignments,
+)
+from consultant_info_generator.model.questions import CategoryQuestions
+from consultant_info_generator.model.category_assignments import (
+    ProfileCategoryAssignments,
+)
 
 
 @click.group()
@@ -70,7 +85,16 @@ async def aimport_consultants_with_categories(profile_ids: str, remove_existing:
     category_questions, profile_category_assignments = await prepare_consultant_chat(
         profile_ids
     )
+    await _asave_questions_and_categories(
+        category_questions, profile_category_assignments, remove_existing
+    )
 
+
+async def _asave_questions_and_categories(
+    category_questions: CategoryQuestions,
+    profile_category_assignments: ProfileCategoryAssignments,
+    remove_existing: bool,
+):
     for category_question in category_questions.category_questions:
         if remove_existing:
             await delete_category_question(category_question)
@@ -83,6 +107,29 @@ async def aimport_consultants_with_categories(profile_ids: str, remove_existing:
         await save_profile_category_assignment(profile_category_assignment)
 
     await order_questions_and_save()
+
+
+@cli.command()
+@click.option(
+    "--remove-existing", "-r", is_flag=True, help="Remove existing consultants"
+)
+def import_footanstey(remove_existing: bool):
+    asyncio.run(_aimport_footanstey(remove_existing))
+
+
+async def _aimport_footanstey(remove_existing: bool):
+    consultants = await import_footanstey_consultants(FOOTANSTEY_URL)
+    categories = flatten_dimensions(
+        await extract_dimensions(
+            [consultant.model_dump_json() for consultant in consultants]
+        )
+    )
+    category_questions, profile_category_assignments = (
+        await prepare_category_questions_and_assignments(categories, consultants)
+    )
+    await _asave_questions_and_categories(
+        category_questions, profile_category_assignments, remove_existing
+    )
 
 
 if __name__ == "__main__":

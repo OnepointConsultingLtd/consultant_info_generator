@@ -213,3 +213,31 @@ The sorting should give precedence to the questions related to a more general ca
 
 {questions}
 """
+
+[industry_name_extraction]
+system_message = """
+You are a helpful assistant that extracts the industry name from a consultant CV.
+"""
+human_message = """
+Below you have a consultant CV. Please extract the industry name from the CV.
+
+{cv}
+
+Here are some examples of industry names:
+- Consulting
+- Finance
+- IT
+- Healthcare
+- Education
+- Government
+- Non-profit
+- Energy
+- Retail
+- Manufacturing
+- Agriculture
+- Construction
+- Transportation
+- Hospitality
+- Media
+- Entertainment
+"""

@@ -47,10 +47,10 @@ async def order_questions() -> QuestionOrdinals:
 
 async def order_questions_and_save():
     ordinals = await order_questions()
-    for ordinal in  ordinals.question_ordinals:
+    for ordinal in ordinals.question_ordinals:
         print(f"{ordinal.question} - {ordinal.ordinal}")
         await save_question_ordinal(ordinal)
-        
+
 
 if __name__ == "__main__":
     import asyncio

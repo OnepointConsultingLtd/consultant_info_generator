@@ -7,6 +7,7 @@ from consultant_info_generator.model.category import Categories
 from consultant_info_generator.consultant_info_tools import extract_consultant
 from consultant_info_generator.logger import logger
 from consultant_info_generator.service.prompt_factory import prompt_factory
+from consultant_info_generator.model.model import Consultant
 
 
 def prompt_factory_dimensions() -> PromptTemplate:
@@ -38,7 +39,7 @@ async def extract_dimensions(cvs: list[str]) -> list[Categories]:
     return dimensions_list
 
 
-def _flatten_dimensions(dimension_list: list[Categories]) -> Categories:
+def flatten_dimensions(dimension_list: list[Categories]) -> Categories:
     """Flatten the dimensions from the list"""
     all_dims = {}
     for dims in dimension_list:
@@ -53,13 +54,20 @@ def _flatten_dimensions(dimension_list: list[Categories]) -> Categories:
     return Categories(categories=list(all_dims.values()))
 
 
-async def extract_from_profiles(linkedin_profiles: list[str]) -> Categories:
-    cvs = []
+async def extract_from_profiles(
+    linkedin_profiles: list[str],
+) -> tuple[Categories, list[Consultant]]:
+    consultants = []
     for profile in linkedin_profiles:
         try:
             consultant = extract_consultant(profile)
             logger.info(f"Extracted consultant from {profile}")
-            cvs.append(consultant.model_dump_json())
+            consultants.append(consultant)
         except Exception as e:
             logger.error(f"Error extracting consultant from {profile}: {e}")
-    return _flatten_dimensions(await extract_dimensions(cvs))
+    categories = flatten_dimensions(
+        await extract_dimensions(
+            [consultant.model_dump_json() for consultant in consultants]
+        )
+    )
+    return categories, consultants

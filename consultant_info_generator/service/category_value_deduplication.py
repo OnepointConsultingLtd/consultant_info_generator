@@ -22,10 +22,13 @@ def _chain_factory() -> RunnableSequence:
 async def deduplicate_dimension_option(category: Category) -> Category:
     """Deduplicate the list of values for a category"""
     chain = _chain_factory()
-    return await chain.ainvoke({
-        "category_name": category.name, 
-        "category_description": category.description,
-        "category_list_of_values": "\n-".join(category.list_of_values)})
+    return await chain.ainvoke(
+        {
+            "category_name": category.name,
+            "category_description": category.description,
+            "category_list_of_values": "\n-".join(category.list_of_values),
+        }
+    )
 
 
 async def deduplicate_categories(categories: Categories) -> Categories:
@@ -34,6 +37,7 @@ async def deduplicate_categories(categories: Categories) -> Categories:
     for category in categories.categories:
         deduplicated_category = await deduplicate_dimension_option(category)
         deduplicated_categories.categories.append(deduplicated_category)
-    logger.info(f"Extracted and deduplicated{len(deduplicated_categories.categories)} categories")
+    logger.info(
+        f"Extracted and deduplicated{len(deduplicated_categories.categories)} categories"
+    )
     return deduplicated_categories
-

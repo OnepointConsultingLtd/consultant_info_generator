@@ -76,16 +76,22 @@ INSERT INTO TB_SKILL(SKILL_NAME) VALUES(%(skill)s)
 ON CONFLICT (SKILL_NAME) DO NOTHING
 """
         for skill in consultant.skills:
-            await cur.execute(sql, {"skill": skill.name})
+            if skill.name:
+                await cur.execute(sql, {"skill": skill.name.strip()[:256]})
 
         sql = """
 INSERT INTO TB_CONSULTANT_SKILL(CONSULTANT_ID, SKILL_ID) VALUES(%(consultant_id)s, (SELECT ID from TB_SKILL WHERE SKILL_NAME = %(skill_name)s))
 ON CONFLICT (CONSULTANT_ID, SKILL_ID) DO NOTHING
 """
         for skill in consultant.skills:
-            await cur.execute(
-                sql, {"consultant_id": consultant_id, "skill_name": skill.name}
-            )
+            if skill.name:
+                await cur.execute(
+                    sql,
+                    {
+                        "consultant_id": consultant_id,
+                        "skill_name": skill.name.strip()[:256],
+                    },
+                )
 
         company_sql = """
 INSERT INTO TB_COMPANY(COMPANY_NAME) VALUES(%(company_name)s)
@@ -302,8 +308,15 @@ async def save_question_ordinal(question_ordinal: QuestionOrdinal) -> int | None
         sql = """
 UPDATE TB_CATEGORY_QUESTION SET ORDER_INDEX = %(ordinal)s WHERE QUESTION = %(question)s
 """
-        res = await cur.execute(sql, {"question": question_ordinal.question, "ordinal": question_ordinal.ordinal})
+        res = await cur.execute(
+            sql,
+            {
+                "question": question_ordinal.question,
+                "ordinal": question_ordinal.ordinal,
+            },
+        )
         return res.rowcount
+
     return await create_cursor(process, True)
 
 
