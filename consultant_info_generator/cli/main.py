@@ -11,6 +11,7 @@ from consultant_info_generator.service.persistence_service_consultants_async imp
     save_profile_category_assignment,
     delete_category_question,
     delete_profile_category_assignment,
+    read_consultants,
 )
 from consultant_info_generator.service.question_order import order_questions_and_save
 from consultant_info_generator.service.footanstey.webpage_import import (
@@ -113,12 +114,18 @@ async def _asave_questions_and_categories(
 @click.option(
     "--remove-existing", "-r", is_flag=True, help="Remove existing consultants"
 )
-def import_footanstey(remove_existing: bool):
-    asyncio.run(_aimport_footanstey(remove_existing))
+@click.option(
+    "--scrape", "-r", is_flag=True, help="scrape"
+)
+def import_footanstey(remove_existing: bool, scrape: bool):
+    asyncio.run(_aimport_footanstey(remove_existing, scrape))
 
 
-async def _aimport_footanstey(remove_existing: bool):
-    consultants = await import_footanstey_consultants(FOOTANSTEY_URL)
+async def _aimport_footanstey(remove_existing: bool, scrape: bool):
+    if scrape:
+        consultants = await import_footanstey_consultants(FOOTANSTEY_URL)
+    else:
+        consultants = await read_consultants()
     categories = flatten_dimensions(
         await extract_dimensions(
             [consultant.model_dump_json() for consultant in consultants]
