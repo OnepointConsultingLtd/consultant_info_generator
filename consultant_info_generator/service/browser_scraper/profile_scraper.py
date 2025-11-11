@@ -9,30 +9,29 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
+from tenacity import retry, stop_after_attempt, wait_fixed
+
 from consultant_info_generator.model.browser_scraper.linkedin_person import Person, Experience
 from consultant_info_generator.model.model import Education
 from consultant_info_generator.service.browser_scraper.actions import VERIFY_LOGIN_ID
 from consultant_info_generator.logger import logger
 from consultant_info_generator.service.date_support import convert_linkedin_date
+from consultant_info_generator.service.browser_scraper.scraper_base import ScraperBase
 
 """Copied from linkedin_scraper"""
 @dataclass
-class Scraper:
+class Scraper(ScraperBase):
     __TOP_CARD = "main"
-    driver: Chrome = None
-    __WAIT_FOR_ELEMENT_TIMEOUT = 5
+    __WAIT_FOR_ELEMENT_TIMEOUT = 10
     TOP_CARD = "pv-top-card"
 
     def __init__(self, driver: Chrome = None, linkedin_url: str = None, extract_educations: bool = False, extract_skills: bool = False):
-        self.driver = driver
+        super().__init__(driver)
         self.linkedin_url = linkedin_url
         self.person = Person(linkedin_url=linkedin_url)
         self.extract_educations = extract_educations
         self.extract_skills = extract_skills
 
-    @staticmethod
-    def wait(duration):
-        sleep(int(duration))
 
     def focus(self):
         self.driver.execute_script('alert("Focus window")')
@@ -309,86 +308,90 @@ class Scraper:
         logo = position_elements[0] if len(position_elements) > 0 else None
         details = position_elements[1] if len(position_elements) > 1 else None
         return logo, details
-        
-
+    
     def get_educations(self):
         try:
-            url = f"{self.linkedin_url}/details/education"
-            self.driver.get(url)
-            self.focus()
-            main = self.wait_for_element_to_load(by=By.TAG_NAME, name="main")
-            self.scroll_to_half()
-            self.scroll_to_bottom()
-            self.wait(3)
-            main_list = self.wait_for_element_to_load(
-                name="pvs-list__container", base=main
-            )
-            for position in main_list.find_elements(
-                By.CLASS_NAME, "pvs-list__paged-list-item"
-            ):
-                position = position.find_element(
-                    By.XPATH, "//div[@data-view-name='profile-component-entity']"
-                )
-                institution_logo_elem, position_details = (
-                    self._extract_multiple_positions(position)
-                )
-                if not institution_logo_elem or not position_details:
-                    continue
-
-                # company elem
-                institution_linkedin_url = institution_logo_elem.find_element(
-                    By.XPATH, "*"
-                ).get_attribute("href")
-
-                # position details
-                position_details_list = position_details.find_elements(By.XPATH, "*")
-                position_summary_details = (
-                    position_details_list[0] if len(position_details_list) > 0 else None
-                )
-                position_summary_text = (
-                    position_details_list[1] if len(position_details_list) > 1 else None
-                )
-                outer_positions = position_summary_details.find_element(
-                    By.XPATH, "*"
-                ).find_elements(By.XPATH, "*")
-
-                institution_name = (
-                    outer_positions[0].find_element(By.TAG_NAME, "span").text
-                )
-                if len(outer_positions) > 1:
-                    degree = outer_positions[1].find_element(By.TAG_NAME, "span").text
-                else:
-                    degree = None
-
-                if len(outer_positions) > 2:
-                    times = outer_positions[2].find_element(By.TAG_NAME, "span").text
-
-                    if times != "":
-                        from_date = (
-                            times.split(" ")[times.split(" ").index("-") - 1]
-                            if len(times.split(" ")) > 3
-                            else times.split(" ")[0]
-                        )
-                        to_date = times.split(" ")[-1]
-                else:
-                    from_date = None
-                    to_date = None
-
-                description = (
-                    position_summary_text.text if position_summary_text else ""
-                )
-
-                education = Education(
-                    start=convert_linkedin_date(from_date),
-                    end=convert_linkedin_date(to_date),
-                    description=description,
-                    degree=degree,
-                    institution_name=institution_name,
-                    linkedin_url=institution_linkedin_url,
-                )
-                self.person.add_education(education)
+            self._get_educations()
         except Exception as e:
             logger.error(f"Error getting educations: {e}")
+
+    @retry(stop=stop_after_attempt(3), wait=wait_fixed(1))
+    def _get_educations(self) -> None:
+        url = f"{self.linkedin_url}/details/education"
+        self.driver.get(url)
+        self.focus()
+        main = self.wait_for_element_to_load(by=By.TAG_NAME, name="main")
+        self.scroll_to_half()
+        self.scroll_to_bottom()
+        self.wait(3)
+        main_list = self.wait_for_element_to_load(
+            name="pvs-list__container", base=main
+        )
+        for position in main_list.find_elements(
+            By.CLASS_NAME, "pvs-list__paged-list-item"
+        ):
+            position = position.find_element(
+                By.XPATH, "//div[@data-view-name='profile-component-entity']"
+            )
+            institution_logo_elem, position_details = (
+                self._extract_multiple_positions(position)
+            )
+            if not institution_logo_elem or not position_details:
+                continue
+
+            # company elem
+            institution_linkedin_url = institution_logo_elem.find_element(
+                By.XPATH, "*"
+            ).get_attribute("href")
+
+            # position details
+            position_details_list = position_details.find_elements(By.XPATH, "*")
+            position_summary_details = (
+                position_details_list[0] if len(position_details_list) > 0 else None
+            )
+            position_summary_text = (
+                position_details_list[1] if len(position_details_list) > 1 else None
+            )
+            outer_positions = position_summary_details.find_element(
+                By.XPATH, "*"
+            ).find_elements(By.XPATH, "*")
+
+            institution_name = (
+                outer_positions[0].find_element(By.TAG_NAME, "span").text
+            )
+            if len(outer_positions) > 1:
+                degree = outer_positions[1].find_element(By.TAG_NAME, "span").text
+            else:
+                degree = None
+
+            if len(outer_positions) > 2:
+                times = outer_positions[2].find_element(By.TAG_NAME, "span").text
+
+                if times != "":
+                    from_date = (
+                        times.split(" ")[times.split(" ").index("-") - 1]
+                        if len(times.split(" ")) > 3
+                        else times.split(" ")[0]
+                    )
+                    to_date = times.split(" ")[-1]
+            else:
+                from_date = None
+                to_date = None
+
+            description = (
+                position_summary_text.text if position_summary_text else ""
+            )
+
+            education = Education(
+                start=convert_linkedin_date(from_date),
+                end=convert_linkedin_date(to_date),
+                description=description,
+                degree=degree,
+                institution_name=institution_name,
+                linkedin_url=institution_linkedin_url,
+            )
+            self.person.add_education(education)
+
 
 
     def get_skills(self):

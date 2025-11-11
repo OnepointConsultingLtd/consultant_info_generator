@@ -11,7 +11,8 @@ from consultant_info_generator.service.browser_scraper.cookie_manager import log
 from consultant_info_generator.config import cfg
 from consultant_info_generator.service.browser_scraper.linkedin_util_functions import correct_linkedin_url
 from consultant_info_generator.model.browser_scraper.linkedin_person import Person, Experience as LinkedInExperience
-from consultant_info_generator.service.browser_scraper.scraper import Scraper
+from consultant_info_generator.service.browser_scraper.profile_scraper import Scraper
+
 
 
 def _create_driver(headless: bool = True) -> webdriver.Chrome:  #
