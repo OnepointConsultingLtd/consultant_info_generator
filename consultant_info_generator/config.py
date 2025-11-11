@@ -1,4 +1,6 @@
 import os
+import random
+
 from pathlib import Path
 from enum import StrEnum
 
@@ -35,10 +37,16 @@ def create_llm(
 
 
 class Config:
-    linkedin_user = os.getenv("LINKEDIN_USER")
-    assert linkedin_user is not None, "The LinkedIn user cannot be empty."
-    linkedin_password = os.getenv("LINKEDIN_PASSWORD")
-    assert linkedin_password is not None, "The LinkedIn user cannot be empty."
+    linkedin_user_1 = os.getenv("LINKEDIN_USER_1")
+    assert linkedin_user_1 is not None, "The LinkedIn user cannot be empty."
+    linkedin_password_1 = os.getenv("LINKEDIN_PASSWORD_1")
+    assert linkedin_password_1 is not None, "The LinkedIn password cannot be empty."
+
+    # These can be empty.
+    linkedin_user_2 = os.getenv("LINKEDIN_USER_2")
+    linkedin_password_2 = os.getenv("LINKEDIN_PASSWORD_2")
+
+    assert linkedin_password_2 is not None, "The LinkedIn password cannot be empty."
     openai_api_key = os.getenv("OPENAI_API_KEY")
     assert openai_api_key is not None, "Please specify your API key."
     openai_api_model = os.getenv("OPENAI_API_MODEL", "gpt-4o-mini")
@@ -74,6 +82,15 @@ class Config:
             selected_llm = openai_llm
         case _:
             raise ValueError(f"Invalid LLM: {preferred_llm_param}")
+
+    cookie_dir = os.getenv("COOKIE_DIR")
+    assert cookie_dir is not None, "The cookie directory cannot be empty."
+    if not Path(cookie_dir).exists():
+        Path(cookie_dir).mkdir(exist_ok=True, parents=True)
+
+
+    def get_random_linkedin_credential(self) -> tuple[str, str]:
+        return random.choice([(self.linkedin_user_1, self.linkedin_password_1), (self.linkedin_user_2, self.linkedin_password_2)])
 
 
 class DBConfig:

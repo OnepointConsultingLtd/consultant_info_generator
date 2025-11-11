@@ -14,7 +14,7 @@ from consultant_info_generator.model.model import (
 
 
 def extract_profile(profile: str) -> dict:
-    api = Linkedin(cfg.linkedin_user, cfg.linkedin_password)
+    api = Linkedin(cfg.linkedin_user_1, cfg.linkedin_password)
     return api.get_profile(profile)
 
 

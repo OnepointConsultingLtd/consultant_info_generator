@@ -41,6 +41,20 @@ End: {self.end}
 
 """
 
+class Education(BaseModel):
+    institution_name: str = Field(default="", description="The name of the institution")
+    linkedin_url: str = Field(
+        default="", description="The linkedin url of the institution"
+    )
+    degree: str = Field(default="", description="The degree of the education")
+    start: Optional[datetime.datetime] = Field(
+        None, description="The start of the education"
+    )
+    end: Optional[datetime.datetime] = Field(
+        None, description="The end of the education"
+    )
+    description: str = Field(default="", description="The description of the education")
+
 
 class Consultant(BaseModel):
     given_name: str = Field(..., description="The given name of the consultant")
@@ -59,6 +73,9 @@ class Consultant(BaseModel):
         ..., description="The experiences of this user"
     )
     skills: list[Skill] = Field(..., description="The list of skills")
+    educations: list[Education] = Field(
+        default=[], description="The educations of this user"
+    )
     photo_200: str | None = Field(
         default=None, description="The 200x200 photo of the consultant"
     )
