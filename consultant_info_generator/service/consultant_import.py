@@ -1,4 +1,4 @@
-from consultant_info_generator.consultant_info_tools import extract_consultant
+from consultant_info_generator.service.browser_scraper.profile_extraction import extract_consultant
 from consultant_info_generator.service.cv_summary import extract_cv_summary
 from consultant_info_generator.service.persistence_service_consultants_async import (
     save_consultant,
@@ -16,7 +16,7 @@ async def import_consultants(
         try:
             if remove_existing:
                 await delete_consultant_by_profile_id(id)
-            consultant = extract_consultant(id)
+            consultant = extract_consultant(id, extract_educations=True, extract_skills=True)
             cv = str(consultant)
             summary = await extract_cv_summary(cv)
             consultant.summary = summary.summary

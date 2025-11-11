@@ -57,7 +57,7 @@ def _convert_to_model_experience(experience: list[LinkedInExperience]) -> list[M
     def convert(date_str: str) -> datetime:
         if date_str == "Present":
             return datetime.now()
-        if date_str.endswith("-"):
+        if date_str.endswith("-") or len(date_str) == 4:
             return datetime.strptime(date_str.split("-")[0].strip(), "%Y")
         return datetime.strptime(date_str, "%b %Y")
     for e in experience:
@@ -108,4 +108,6 @@ def extract_consultant(
     scraper.scrape()
     person = scraper.person
     logger.info(f"Extracted profile: {person}")
-    return _convert_to_consultant(person)
+    consultant = _convert_to_consultant(person)
+    consultant.email = f"{profile.split('/')[-1]}@linkedin.com"
+    return consultant

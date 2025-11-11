@@ -1,5 +1,5 @@
 -- Expert matcher database
-CREATE DATABASE expert_matcher
+CREATE DATABASE consultant_chat_2
     WITH
     OWNER = postgres
     ENCODING = 'UTF8'
