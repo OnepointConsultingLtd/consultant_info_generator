@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+from pydantic import BaseModel, Field
+
 from consultant_info_generator.model.model import Skill
 
 
@@ -84,3 +86,11 @@ class Experience(Institution):
     position_title: str = None
     duration: str = None
     location: str = None
+
+
+
+class PersonSearchResult(BaseModel):
+    person_name: str = Field(..., description="The name of the person")
+    person_linkedin_url: str = Field(..., description="The linkedin url of the person")
+    profile_id: str = Field(..., description="The profile id of the person")
+    title: str = Field(default="", description="The title of the person")
