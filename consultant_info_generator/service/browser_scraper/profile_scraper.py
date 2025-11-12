@@ -33,14 +33,6 @@ class Scraper(ScraperBase):
         self.extract_skills = extract_skills
 
 
-    def focus(self):
-        self.driver.execute_script('alert("Focus window")')
-        self.driver.switch_to.alert.accept()
-
-    def mouse_click(self, elem):
-        action = webdriver.ActionChains(self.driver)
-        action.move_to_element(elem).perform()
-
     def wait_for_element_to_load(self, by=By.CLASS_NAME, name="pv-top-card", base=None):
         base = base or self.driver
         return WebDriverWait(base, self.__WAIT_FOR_ELEMENT_TIMEOUT).until(

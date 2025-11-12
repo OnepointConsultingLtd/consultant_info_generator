@@ -114,9 +114,7 @@ async def _asave_questions_and_categories(
 @click.option(
     "--remove-existing", "-r", is_flag=True, help="Remove existing consultants"
 )
-@click.option(
-    "--scrape", "-r", is_flag=True, help="scrape"
-)
+@click.option("--scrape", "-r", is_flag=True, help="scrape")
 def import_footanstey(remove_existing: bool, scrape: bool):
     asyncio.run(_aimport_footanstey(remove_existing, scrape))
 

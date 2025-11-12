@@ -88,9 +88,13 @@ class Config:
     if not Path(cookie_dir).exists():
         Path(cookie_dir).mkdir(exist_ok=True, parents=True)
 
-
     def get_random_linkedin_credential(self) -> tuple[str, str]:
-        return random.choice([(self.linkedin_user_1, self.linkedin_password_1), (self.linkedin_user_2, self.linkedin_password_2)])
+        return random.choice(
+            [
+                (self.linkedin_user_1, self.linkedin_password_1),
+                (self.linkedin_user_2, self.linkedin_password_2),
+            ]
+        )
 
 
 class DBConfig:

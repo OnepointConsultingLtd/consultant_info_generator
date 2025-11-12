@@ -1,13 +1,7 @@
 from time import sleep
-from webbrowser import Chrome
 
 from selenium import webdriver
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-
-from consultant_info_generator.logger import logger
-from consultant_info_generator.service.browser_scraper.actions import VERIFY_LOGIN_ID
+from selenium.webdriver.remote.webelement import WebElement
 
 
 class ScraperBase:
@@ -21,4 +15,11 @@ class ScraperBase:
     def wait(duration):
         sleep(int(duration))
 
+    def focus(self):
+        self.driver.execute_script('alert("Focus window")')
+        self.driver.switch_to.alert.accept()
+
+    def mouse_click(self, elem: WebElement):
+        action = webdriver.ActionChains(self.driver)
+        action.move_to_element(elem).perform()
     

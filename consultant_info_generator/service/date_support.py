@@ -1,6 +1,7 @@
 from datetime import datetime
 import re
 
+
 def convert_linkedin_date(date_str: str | None) -> datetime | None:
     """
     Convert a LinkedIn date string to a datetime object.

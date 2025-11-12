@@ -2,7 +2,8 @@ from dataclasses import dataclass
 
 from consultant_info_generator.model.model import Skill
 
-class Person():
+
+class Person:
 
     __TOP_CARD = "main"
     __WAIT_FOR_ELEMENT_TIMEOUT = 5
@@ -10,8 +11,8 @@ class Person():
     def __init__(
         self,
         linkedin_url: str,
-        name: str=None,
-        about: str=None,
+        name: str = None,
+        about: str = None,
         experiences=None,
         educations=None,
         skills: list[Skill] = None,

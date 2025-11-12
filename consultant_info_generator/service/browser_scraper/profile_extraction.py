@@ -6,13 +6,24 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
 from consultant_info_generator.logger import logger
-from consultant_info_generator.model.model import Consultant, Experience as ModelExperience, Company, Skill
-from consultant_info_generator.service.browser_scraper.cookie_manager import login_with_cookies
+from consultant_info_generator.model.model import (
+    Consultant,
+    Experience as ModelExperience,
+    Company,
+    Skill,
+)
+from consultant_info_generator.service.browser_scraper.cookie_manager import (
+    login_with_cookies,
+)
 from consultant_info_generator.config import cfg
-from consultant_info_generator.service.browser_scraper.linkedin_util_functions import correct_linkedin_url
-from consultant_info_generator.model.browser_scraper.linkedin_person import Person, Experience as LinkedInExperience
+from consultant_info_generator.service.browser_scraper.linkedin_util_functions import (
+    correct_linkedin_url,
+)
+from consultant_info_generator.model.browser_scraper.linkedin_person import (
+    Person,
+    Experience as LinkedInExperience,
+)
 from consultant_info_generator.service.browser_scraper.profile_scraper import Scraper
-
 
 
 def _create_driver(headless: bool = True) -> webdriver.Chrome:  #
@@ -53,23 +64,27 @@ def _convert_to_consultant(person: Person | None) -> Consultant | None:
     )
 
 
-def _convert_to_model_experience(experience: list[LinkedInExperience]) -> list[ModelExperience]:
+def _convert_to_model_experience(
+    experience: list[LinkedInExperience],
+) -> list[ModelExperience]:
     model_experiences = []
+
     def convert(date_str: str) -> datetime:
         if date_str == "Present":
             return datetime.now()
         if date_str.endswith("-") or len(date_str) == 4:
             return datetime.strptime(date_str.split("-")[0].strip(), "%Y")
         return datetime.strptime(date_str, "%b %Y")
+
     for e in experience:
         try:
             model_experience = ModelExperience(
                 location=e.location,
                 title=e.position_title,
-                    start=convert(e.from_date),
-                    end=convert(e.to_date),
-                    company=Company(name=e.institution_name),
-                )
+                start=convert(e.from_date),
+                end=convert(e.to_date),
+                company=Company(name=e.institution_name),
+            )
         except Exception as e:
             logger.error(f"Error converting experience: {e}")
             continue
@@ -105,7 +120,12 @@ def extract_consultant(
 
     profile = correct_linkedin_url(profile)
     logger.info(f"Corrected LinkedIn URL: {profile}")
-    scraper = Scraper(driver, profile, extract_educations=extract_educations, extract_skills=extract_skills)
+    scraper = Scraper(
+        driver,
+        profile,
+        extract_educations=extract_educations,
+        extract_skills=extract_skills,
+    )
     scraper.scrape()
     person = scraper.person
     logger.info(f"Extracted profile: {person}")

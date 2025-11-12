@@ -41,6 +41,7 @@ End: {self.end}
 
 """
 
+
 class Education(BaseModel):
     institution_name: str = Field(default="", description="The name of the institution")
     linkedin_url: str = Field(
