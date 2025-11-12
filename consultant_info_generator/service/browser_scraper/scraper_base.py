@@ -1,10 +1,18 @@
 from time import sleep
 
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
+from selenium.webdriver.support.wait import WebDriverWait
+
+from consultant_info_generator.logger import logger
+from consultant_info_generator.service.browser_scraper.actions import EC
+from consultant_info_generator.service.browser_scraper.actions import VERIFY_LOGIN_ID
 
 
 class ScraperBase:
+
+    WAIT_FOR_ELEMENT_TIMEOUT: int = 10
 
     driver: webdriver.Chrome
 
@@ -23,3 +31,41 @@ class ScraperBase:
         action = webdriver.ActionChains(self.driver)
         action.move_to_element(elem).perform()
     
+    def wait_for_element_to_load(self, by=By.CLASS_NAME, name="pv-top-card", base=None):
+        base = base or self.driver
+        return WebDriverWait(base, self.WAIT_FOR_ELEMENT_TIMEOUT).until(
+            EC.presence_of_element_located(
+                (
+                    by,
+                    name
+                )
+            )
+        )
+
+    def wait_for_all_elements_to_load(self, by=By.CLASS_NAME, name="pv-top-card", base=None):
+        base = base or self.driver
+        return WebDriverWait(base, self.WAIT_FOR_ELEMENT_TIMEOUT).until(
+            EC.presence_of_all_elements_located(
+                (
+                    by,
+                    name
+                )
+            )
+        )
+
+    def is_signed_in(self):
+        try:
+            WebDriverWait(self.driver, self.WAIT_FOR_ELEMENT_TIMEOUT).until(
+                EC.presence_of_element_located(
+                    (
+                        By.CLASS_NAME,
+                        VERIFY_LOGIN_ID,
+                    )
+                )
+            )
+
+            self.driver.find_element(By.CLASS_NAME, VERIFY_LOGIN_ID)
+            return True
+        except Exception as e:
+            logger.error(f"Failed to check if signed in: {e}")
+        return False

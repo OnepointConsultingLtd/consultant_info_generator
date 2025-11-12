@@ -13,7 +13,7 @@ from tenacity import retry, stop_after_attempt, wait_fixed
 
 from consultant_info_generator.model.browser_scraper.linkedin_person import Person, Experience
 from consultant_info_generator.model.model import Education
-from consultant_info_generator.service.browser_scraper.actions import VERIFY_LOGIN_ID
+
 from consultant_info_generator.logger import logger
 from consultant_info_generator.service.date_support import convert_linkedin_date
 from consultant_info_generator.service.browser_scraper.scraper_base import ScraperBase
@@ -22,7 +22,6 @@ from consultant_info_generator.service.browser_scraper.scraper_base import Scrap
 @dataclass
 class Scraper(ScraperBase):
     __TOP_CARD = "main"
-    __WAIT_FOR_ELEMENT_TIMEOUT = 10
     TOP_CARD = "pv-top-card"
 
     def __init__(self, driver: Chrome = None, linkedin_url: str = None, extract_educations: bool = False, extract_skills: bool = False):
@@ -32,46 +31,6 @@ class Scraper(ScraperBase):
         self.extract_educations = extract_educations
         self.extract_skills = extract_skills
 
-
-    def wait_for_element_to_load(self, by=By.CLASS_NAME, name="pv-top-card", base=None):
-        base = base or self.driver
-        return WebDriverWait(base, self.__WAIT_FOR_ELEMENT_TIMEOUT).until(
-            EC.presence_of_element_located(
-                (
-                    by,
-                    name
-                )
-            )
-        )
-
-    def wait_for_all_elements_to_load(self, by=By.CLASS_NAME, name="pv-top-card", base=None):
-        base = base or self.driver
-        return WebDriverWait(base, self.__WAIT_FOR_ELEMENT_TIMEOUT).until(
-            EC.presence_of_all_elements_located(
-                (
-                    by,
-                    name
-                )
-            )
-        )
-
-
-    def is_signed_in(self):
-        try:
-            WebDriverWait(self.driver, self.__WAIT_FOR_ELEMENT_TIMEOUT).until(
-                EC.presence_of_element_located(
-                    (
-                        By.CLASS_NAME,
-                        VERIFY_LOGIN_ID,
-                    )
-                )
-            )
-
-            self.driver.find_element(By.CLASS_NAME, VERIFY_LOGIN_ID)
-            return True
-        except Exception as e:
-            logger.error(f"Failed to check if signed in: {e}")
-        return False
 
     def scroll_to_half(self):
         self.driver.execute_script(
@@ -128,7 +87,7 @@ class Scraper(ScraperBase):
 
     def scrape_logged_in(self, close_on_complete=True):
         driver = self.driver
-        WebDriverWait(driver, self.__WAIT_FOR_ELEMENT_TIMEOUT).until(
+        WebDriverWait(driver, self.WAIT_FOR_ELEMENT_TIMEOUT).until(
             EC.presence_of_element_located(
                 (
                     By.TAG_NAME,

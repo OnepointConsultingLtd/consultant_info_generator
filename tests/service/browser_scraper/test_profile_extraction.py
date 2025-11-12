@@ -26,7 +26,15 @@ def test_extract_profile_full():
 
 
 def test_extract_profile_mkhere():
-    profile = extract_consultant("mkhere", headless=False)
+    basic_tester("mkhere")
+
+
+def test_extract_profile_robertbaldock():
+    basic_tester("robertbaldock")
+
+
+def basic_tester(profile_id: str):
+    profile = extract_consultant(profile_id, headless=False)
     assert profile is not None, "The profile cannot be retrieved."
     assert (
         profile.cv is not None and profile.cv != ""
