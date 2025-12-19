@@ -1,6 +1,6 @@
 [project]
 name = "consultant-info-generator"
-version = "0.1.7"
+version = "0.1.8"
 description = ""
 authors = [
     {name = "Gil Fernandes",email = "gil.fernandes@onepointltd.com"}
@@ -27,5 +27,5 @@ dependencies = [
 black = "^25.1.0"
 
 [tool.setuptools]
-packages = ["consultant_info_generator"]
+packages = {find = {}}
 
